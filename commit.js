@@ -27,7 +27,7 @@ async function generateCommitMessage(diff) {
     ];
     for (const api of geminiApis) {
         try {
-            console.log(`Attempting to generate commit message using Gemini API: ${api}`);
+            console.log(`Attempting to generate commit message using Gemini API`);
             const response = await fetch(api);
             const data = await response.json();
             if (data.message || data.data || data.answer || data.result) {
