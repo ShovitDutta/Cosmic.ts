@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@repo/tailwindcss": ["pkg/tailwindcss"],
+            "@repo/eslint-config": ["pkg/eslint-config"],
+            "@repo/tailwind-config": ["pkg/tailwind-config"],
+            "@repo/typescript-config": ["pkg/typescript-config"]
+        }
+    }
+}

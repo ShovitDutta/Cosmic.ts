@@ -1,0 +1,33 @@
+{
+    "private": true,
+    "type": "module",
+    "name": "monorepo.ts",
+    "scripts": {
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "commit": "git add . && node commit.js",
+        "check-types": "turbo run check-types",
+        "build": "turbo run build",
+        "lint": "turbo run lint",
+        "dev": "turbo run dev"
+    },
+    "devDependencies": {
+        "dotenv": "^16.5.0",
+        "openai": "^4.103.0",
+        "prettier": "^3.5.3",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "turbo": "^2.5.3"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    },
+    "engines": {
+        "node": ">=18"
+    },
+    "packageManager": "yarn@1.22.22",
+    "workspaces": [
+        "source/*",
+        "config/*"
+    ]
+}
