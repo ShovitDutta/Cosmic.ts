@@ -2,6 +2,17 @@
     "private": true,
     "type": "module",
     "name": "monorepo.ts",
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "description": "A TypeScript based Next.js mono-repo powered by Turbo",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ShovitDutta/monorepo.ts.git"
+    },
+    "homepage": "https://github.com/ShovitDutta/monorepo.ts",
     "scripts": {
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "commit": "git add . && node commit.js",
