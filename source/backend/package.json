@@ -1,14 +1,14 @@
 {
     "version": "0.0.0",
-    "name": "frontend",
+    "name": "backend",
     "type": "module",
     "scripts": {
         "migrate": "prisma migrate dev && prisma generate",
         "dev": "next dev --port 3002 --turbopack",
         "lint": "next lint --max-warnings 0",
+        "start": "next start --port 3002",
         "check-types": "tsc --noEmit",
-        "build": "next build",
-        "start": "next start"
+        "build": "next build"
     },
     "dependencies": {
         "@auth/prisma-adapter": "^2.9.1",
