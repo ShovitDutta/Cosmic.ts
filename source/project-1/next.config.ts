@@ -1,9 +1,9 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
+    basePath: "/project-1",
     eslint: { ignoreDuringBuilds: true },
     typescript: { ignoreBuildErrors: true },
     images: { remotePatterns: [{ protocol: "https", hostname: "**" }] },
-    basePath: process.env.NODE_ENV === "production" ? "/project-1" : "",
     async headers() {
         return [
             {
