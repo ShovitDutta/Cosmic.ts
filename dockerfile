@@ -6,5 +6,4 @@ COPY . .
 RUN yarn install
 RUN yarn run build
 EXPOSE 80 8000 3001 3002
-RUN chmod +x /app/docker.sh
-CMD yarn start & nginx -c /app/nginx.conf
+CMD nginx -c /app/nginx.conf && yarn start
