@@ -11,10 +11,6 @@ RUN apk update && \
     wget \
     unzip \
     curl \
-    tor \
-    python3 \
-    py3-pip \
-    py3-venv && \
     rm -rf /var/cache/apk/*
 COPY --from=builder /app/build ./build
 COPY --from=builder /app/node_modules ./node_modules
