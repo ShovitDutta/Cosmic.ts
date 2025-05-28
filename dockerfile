@@ -7,4 +7,5 @@ COPY . .
 EXPOSE 8000
 RUN yarn install
 RUN yarn run build
+RUN yarn global add concurrently
 CMD ["concurrently", "nginx -c /app/nginx.conf", "yarn start"]
