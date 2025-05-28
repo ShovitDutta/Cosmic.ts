@@ -7,4 +7,4 @@ RUN yarn install
 RUN yarn build
 COPY nginx.conf .
 EXPOSE 8000
-CMD nginx -c ./nginx.conf && yarn start
+CMD nginx -c /app/nginx.conf && yarn start
