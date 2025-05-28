@@ -8,4 +8,4 @@ RUN yarn install
 RUN yarn run build
 RUN chmod +x /app/entry.sh
 EXPOSE 80 8000 3001 3002
-CMD ["entry.sh"]
+CMD ["/bin/sh", "entry.sh"]
