@@ -14,10 +14,10 @@
     },
     "homepage": "https://github.com/ShovitDutta/monorepo.js",
     "scripts": {
+        "commit": "git add . && node config/scripts/commit.js",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-        "commit": "git add . && node scripts/commit.js",
+        "start": "node config/scripts/start.js",
         "check-types": "turbo run check-types",
-        "start": "node scripts/start.js",
         "build": "turbo run build",
         "lint": "turbo run lint",
         "dev": "turbo run dev"
