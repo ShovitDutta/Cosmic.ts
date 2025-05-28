@@ -23,6 +23,7 @@
         "dev": "turbo run dev"
     },
     "devDependencies": {
+        "concurrently": "^9.1.2",
         "dotenv": "^16.5.0",
         "openai": "^4.103.0",
         "prettier": "^3.5.3",
