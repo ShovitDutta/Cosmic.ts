@@ -8,4 +8,4 @@ RUN yarn install
 RUN yarn build
 EXPOSE 80 8000 3001 3002
 RUN chmod +x /app/docker.sh
-CMD ["docker.sh"]
+CMD ["/bin/sh", "/app/docker.sh"]
