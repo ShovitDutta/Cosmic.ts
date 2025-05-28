@@ -5,9 +5,9 @@
     "type": "module",
     "scripts": {
         "postinstall": "prisma migrate dev && prisma generate",
+        "start": "next start --port 3002 --hostname 0.0.0.0",
         "dev": "next dev --port 3002 --turbopack",
         "lint": "next lint --max-warnings 0",
-        "start": "next start --port 3002",
         "check-types": "tsc --noEmit",
         "build": "next build"
     },
