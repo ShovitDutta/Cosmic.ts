@@ -1,8 +1,9 @@
 // source/frontend/src/components/server/(root-page)/Dashboard.tsx
+"use server";
 import type { Session } from "next-auth";
 import { UserAvatar } from "./UserAvatar";
 import { SignOut } from "../client/signout";
-export function Dashboard({ session }: { session: Session }) {
+export async function Dashboard({ session }: { session: Session }) {
     const getGreeting = () => {
         const hour = new Date().getHours();
         if (hour < 12) return "Good Morning";
