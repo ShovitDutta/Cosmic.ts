@@ -8,6 +8,6 @@ ENV DATABASE_URL="file:./local.db"
 ENV PATH="/usr/local/bin:$PATH"
 RUN npm install -g yarn
 RUN yarn install && yarn build
-EXPOSE 3001 3002 3003
+EXPOSE 3001 3002
 EXPOSE 9050 9051
 CMD ["yarn", "start"]
