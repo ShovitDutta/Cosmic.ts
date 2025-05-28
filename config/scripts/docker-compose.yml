@@ -2,7 +2,7 @@ services:
     monorepo-js:
         build:
             context: .
-            dockerfile: dockerfile
+            dockerfile: ../../dockerfile
         container_name: monorepo-js
         ports:
             - "3000:8000"
