@@ -6,6 +6,6 @@ RUN apk update && apk add --no-cache wget unzip curl nginx && rm -rf /var/cache/
 COPY . .
 RUN yarn install
 RUN yarn run build
-RUN chmod +x /app/docker-entrypoint.sh
+RUN chmod +x /app/entry.sh
 EXPOSE 80 8000 3001 3002
-CMD ["docker-entrypoint.sh"]
+CMD ["entry.sh"]
