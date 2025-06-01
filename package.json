@@ -26,10 +26,10 @@
     "scripts": {
         "========================================: Docker": "========================================",
         "docker:start": "yarn docker:stop && yarn docker:build && yarn docker:publish",
-        "docker:publish": "docker run --publish 8000:8000 --name cosmic.ts cosmic.ts",
-        "docker:build": "docker build --tag cosmic.ts -f dockerfile .",
+        "docker:publish": "docker run --publish 8000:8000 --name @cosmic @cosmic",
+        "docker:build": "docker build --tag @cosmic -f dockerfile .",
         "docker:prune": "docker system prune --all --force",
-        "docker:stop": "docker rmi --force cosmic.ts",
+        "docker:stop": "docker rmi --force @cosmic",
         "========================================: System": "========================================",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "commit": "git add . && node scripts/commit.js",
