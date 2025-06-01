@@ -7,7 +7,8 @@ export default async function UserAvatar({ session, size = "lg" }: { session: Se
     return (
         <div className="relative">
             <div
-                className={`${sizeClasses[size]} ${ringClasses[size]} ring-black ring-offset-1 ring-offset-transparent rounded-full overflow-hidden shadow-xl bg-gradient-to-br from-red-800 to-orange-800 p-0.5`}>
+                className={`${sizeClasses[size]} ${ringClasses[size]} ring-black ring-offset-1 ring-offset-transparent rounded-full overflow-hidden shadow-xl bg-gradient-to-br from-red-800 to-orange-800 p-0.5`}
+            >
                 <Image
                     src={session?.user?.image ?? ""}
                     alt={session?.user?.name ?? "User Avatar"}

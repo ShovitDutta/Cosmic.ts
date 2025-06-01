@@ -8,9 +8,7 @@ export function AppProviders({ children }: { children: ReactNode }) {
     return (
         <QueryClientProvider client={queryClient}>
             <AnimatePresence mode="wait">
-                <SessionProvider>
-                    {children}
-                </SessionProvider>
+                <SessionProvider>{children}</SessionProvider>
             </AnimatePresence>
         </QueryClientProvider>
     );

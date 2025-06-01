@@ -21,11 +21,11 @@ export const accounts = sqliteTable(
         id_token: text("id_token"),
         session_state: text("session_state"),
     },
-    account => [primaryKey({ columns: [account.provider, account.providerAccountId] })],
+    (account) => [primaryKey({ columns: [account.provider, account.providerAccountId] })],
 );
 export const sessions = sqliteTable("session", { sessionToken: text("sessionToken").primaryKey(), userId: text("userId").notNull(), expires: integer("expires", { mode: "timestamp" }).notNull() });
 export const verificationTokens = sqliteTable(
     "verificationToken",
     { identifier: text("identifier").notNull(), token: text("token").notNull(), expires: integer("expires", { mode: "timestamp" }).notNull() },
-    vt => [primaryKey({ columns: [vt.identifier, vt.token] })],
+    (vt) => [primaryKey({ columns: [vt.identifier, vt.token] })],
 );

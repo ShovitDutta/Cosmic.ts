@@ -40,7 +40,8 @@ export default async function ParallelServerPage() {
                         style={{
                             background: `linear-gradient(135deg, rgba(17,24,39,0.95) 0%, rgba(0,0,0,0.95) 50%, rgba(31,41,55,0.95) 100%)`,
                             boxShadow: `0 25px 50px -12px rgba(6,182,212,0.25), inset 0 1px 0 rgba(255,255,255,0.1)`,
-                        }}>
+                        }}
+                    >
                         <div className="absolute top-4 right-4 flex gap-2">
                             <div className="w-3 h-3 rounded-full bg-red-400 shadow-lg"></div>
                             <div className="w-3 h-3 rounded-full bg-yellow-400 shadow-lg"></div>
@@ -74,7 +75,8 @@ export default async function ParallelServerPage() {
                                         <div className="w-4 h-4 rounded-full bg-yellow-400 animate-pulse"></div>
                                         <span className="text-yellow-300 text-sm font-semibold">Loading...</span>
                                     </div>
-                                }>
+                                }
+                            >
                                 <ServerTimeDisplay />
                             </Suspense>
                         </div>

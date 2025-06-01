@@ -20,7 +20,7 @@ export default function PublicPage() {
         const fetchAllMessages = async () => {
             setLoading(true);
             const results = await Promise.all(
-                apiEndpoints.map(async url => {
+                apiEndpoints.map(async (url) => {
                     try {
                         const response = await fetch(url);
                         if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
@@ -45,7 +45,8 @@ export default function PublicPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="w-full max-w-4xl p-8 space-y-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl">
+                className="w-full max-w-4xl p-8 space-y-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl"
+            >
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }} className="text-center">
                     <div className="animate-pulse mx-auto w-16 h-16 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full flex items-center justify-center mb-6 shadow-lg">
                         <div className="animate-spin w-6 h-6 bg-white rounded-full flex items-center justify-center">
@@ -58,7 +59,8 @@ export default function PublicPage() {
                     <motion.div
                         initial={{ opacity: 0, scale: 0.95 }}
                         animate={{ opacity: 1, scale: 1 }}
-                        className="flex items-center justify-center space-x-3 p-4 bg-blue-500/20 border border-blue-500/30 rounded-xl">
+                        className="flex items-center justify-center space-x-3 p-4 bg-blue-500/20 border border-blue-500/30 rounded-xl"
+                    >
                         <AiOutlineLoading3Quarters className="text-blue-400 text-xl animate-spin" /> <p className="text-blue-200 text-sm">Fetching data from all endpoints...</p>
                     </motion.div>
                 )}
@@ -70,7 +72,8 @@ export default function PublicPage() {
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: 0.1 * index, duration: 0.5 }}
-                                className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-200">
+                                className="p-6 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10 hover:bg-white/10 transition-all duration-200"
+                            >
                                 <div className="flex items-start space-x-4">
                                     <div className="flex-shrink-0 mt-1">{item.error ? <BsXCircle className="text-red-400 text-xl" /> : <BsCheckCircle className="text-green-400 text-xl" />}</div>
                                     <div className="flex-grow min-w-0">
@@ -98,7 +101,8 @@ export default function PublicPage() {
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            className="flex items-center space-x-3 p-6 bg-red-500/20 border border-red-500/30 rounded-xl">
+                            className="flex items-center space-x-3 p-6 bg-red-500/20 border border-red-500/30 rounded-xl"
+                        >
                             <AiOutlineWarning className="text-red-400 text-xl flex-shrink-0" /> <p className="text-red-200">No data fetched. Check API endpoints or network connection.</p>
                         </motion.div>
                     ) : null}

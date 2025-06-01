@@ -13,7 +13,8 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
-                className="w-full max-w-md p-8 space-y-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl">
+                className="w-full max-w-md p-8 space-y-8 bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl"
+            >
                 <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2, duration: 0.5 }} className="text-center">
                     <div className="animate-pulse mx-auto w-16 h-16 bg-gradient-to-br from-red-500 to-orange-500 rounded-full flex items-center justify-center mb-6 shadow-lg">
                         <AiOutlineWarning className="text-white text-2xl" />
@@ -31,7 +32,8 @@ export default function Error({ error, reset }: { error: Error & { digest?: stri
                         whileTap={{ scale: 0.98 }}
                         whileHover={{ scale: 1.02, y: -2 }}
                         onClick={() => reset()}
-                        className="w-full flex items-center justify-center space-x-3 py-4 px-6 bg-white hover:bg-gray-50 text-gray-800 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl group">
+                        className="w-full flex items-center justify-center space-x-3 py-4 px-6 bg-white hover:bg-gray-50 text-gray-800 font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-xl group"
+                    >
                         <span>Try again</span>
                         <motion.div className="opacity-0 group-hover:opacity-100 transition-opacity" initial={false} animate={{ x: 0 }} whileHover={{ x: 4 }}>
                             <BsArrow90DegRight />

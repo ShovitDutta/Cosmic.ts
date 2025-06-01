@@ -13,7 +13,7 @@ export default function ParallelClientPage() {
                 const response = await fetch("/api/clock");
                 const data = await response.json();
                 setCurrentTime(data.time);
-                setConnectionCount(prev => prev + 1);
+                setConnectionCount((prev) => prev + 1);
             } catch (error) {
                 console.log(error);
                 setCurrentTime("Connection Error");
@@ -31,7 +31,8 @@ export default function ParallelClientPage() {
             <motion.div
                 animate={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -20 }}
-                className="mb-6 p-4 rounded-xl bg-gradient-to-r from-cyan-900/30 to-blue-900/30 border border-cyan-400/30 backdrop-blur-xl">
+                className="mb-6 p-4 rounded-xl bg-gradient-to-r from-cyan-900/30 to-blue-900/30 border border-cyan-400/30 backdrop-blur-xl"
+            >
                 <h3 className="text-lg font-bold text-cyan-300 mb-2">Client-Side Rendering (CSR)</h3>
                 <ul className="text-sm text-cyan-200/80 space-y-1">
                     <li>• Renders in the browser after JavaScript loads</li>
@@ -44,7 +45,8 @@ export default function ParallelClientPage() {
                 initial={{ opacity: 0, y: 50, rotateX: -15 }}
                 animate={{ opacity: 1, y: 0, rotateX: 0 }}
                 transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-                className="flex-1 flex flex-col justify-center relative">
+                className="flex-1 flex flex-col justify-center relative"
+            >
                 <div className="absolute inset-0 overflow-hidden rounded-3xl">
                     <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/20 rounded-full blur-3xl animate-float"></div>
                     <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl animate-float-delayed"></div>
@@ -57,27 +59,32 @@ export default function ParallelClientPage() {
                         style={{
                             background: `linear-gradient(135deg, rgba(17,24,39,0.95) 0%, rgba(0,0,0,0.95) 50%, rgba(31,41,55,0.95) 100%)`,
                             boxShadow: `0 25px 50px -12px rgba(6,182,212,0.25), inset 0 1px 0 rgba(255,255,255,0.1)`,
-                        }}>
+                        }}
+                    >
                         <div className="absolute top-6 left-6 flex gap-3">
                             <motion.div
                                 className="w-4 h-4 rounded-full bg-red-400 shadow-lg shadow-red-400/50"
                                 animate={{ scale: [1, 1.2, 1] }}
-                                transition={{ duration: 2, repeat: Infinity }}></motion.div>
+                                transition={{ duration: 2, repeat: Infinity }}
+                            ></motion.div>
                             <motion.div
                                 className="w-4 h-4 rounded-full bg-yellow-400 shadow-lg shadow-yellow-400/50"
                                 animate={{ scale: [1, 1.2, 1] }}
-                                transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}></motion.div>
+                                transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
+                            ></motion.div>
                             <motion.div
                                 className="w-4 h-4 rounded-full bg-green-400 shadow-lg shadow-green-400/50"
                                 animate={{ scale: [1, 1.2, 1] }}
-                                transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}></motion.div>
+                                transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
+                            ></motion.div>
                         </div>
                         <div className="absolute top-6 right-6 text-xs text-gray-500 font-mono">#{connectionCount.toString().padStart(4, "0")}</div>
                         <div className="flex items-center gap-5 mb-8">
                             <motion.div
                                 className="relative"
                                 animate={{ rotate: 360, scale: [1, 1.1, 1] }}
-                                transition={{ rotate: { duration: 4, repeat: Infinity, ease: "linear" }, scale: { duration: 2, repeat: Infinity } }}>
+                                transition={{ rotate: { duration: 4, repeat: Infinity, ease: "linear" }, scale: { duration: 2, repeat: Infinity } }}
+                            >
                                 <div className="w-6 h-6 rounded-full bg-gradient-to-r from-cyan-400 to-blue-500 shadow-[0_0_30px_#00ffff]"></div>
                                 <div className="absolute inset-0 w-6 h-6 rounded-full bg-cyan-300/50 animate-ping"></div>
                                 <div className="absolute inset-1 w-4 h-4 rounded-full bg-white/20 backdrop-blur-sm"></div>
@@ -85,14 +92,16 @@ export default function ParallelClientPage() {
                             <motion.h1
                                 className="text-3xl md:text-4xl font-black bg-gradient-to-r from-cyan-300 via-blue-300 to-teal-400 bg-clip-text text-transparent tracking-tight text-left"
                                 animate={{ backgroundPosition: ["0%", "100%", "0%"] }}
-                                transition={{ duration: 5, repeat: Infinity }}>
+                                transition={{ duration: 5, repeat: Infinity }}
+                            >
                                 Client Runtime
                             </motion.h1>
                         </div>
                         <div className="space-y-6 text-left">
                             <motion.div
                                 className="p-5 rounded-2xl bg-gradient-to-r from-cyan-900/40 to-blue-900/40 border border-cyan-400/30 backdrop-blur-xl relative overflow-hidden"
-                                transition={{ type: "spring", stiffness: 300 }}>
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
                                 <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 <div className="relative text-left">
                                     <p className="text-gray-200 text-lg font-semibold leading-relaxed mb-2">React Client Component</p>
@@ -106,7 +115,8 @@ export default function ParallelClientPage() {
                             </motion.div>
                             <motion.div
                                 className="flex items-center gap-6 p-6 rounded-2xl bg-gradient-to-r from-gray-800/60 to-gray-900/60 border border-gray-600/40 backdrop-blur-xl relative overflow-hidden"
-                                transition={{ type: "spring", stiffness: 300 }}>
+                                transition={{ type: "spring", stiffness: 300 }}
+                            >
                                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-shimmer"></div>
                                 <div className="flex items-center gap-3">
                                     <AnimatePresence mode="wait">
@@ -117,7 +127,8 @@ export default function ParallelClientPage() {
                                                 animate={{ scale: 1, rotate: 0 }}
                                                 exit={{ scale: 0, rotate: 180 }}
                                                 transition={{ type: "spring", stiffness: 500 }}
-                                                className="w-4 h-4 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 animate-pulse shadow-[0_0_20px_#fbbf24]">
+                                                className="w-4 h-4 rounded-full bg-gradient-to-r from-yellow-400 to-orange-400 animate-pulse shadow-[0_0_20px_#fbbf24]"
+                                            >
                                                 <div className="w-full h-full rounded-full bg-yellow-300/50 animate-ping"></div>
                                             </motion.div>
                                         ) : error ? (
@@ -127,7 +138,8 @@ export default function ParallelClientPage() {
                                                 animate={{ scale: 1, rotate: 0 }}
                                                 exit={{ scale: 0, rotate: 180 }}
                                                 transition={{ type: "spring", stiffness: 500 }}
-                                                className="w-4 h-4 rounded-full bg-gradient-to-r from-red-400 to-pink-500 animate-pulse shadow-[0_0_20px_#f87171]">
+                                                className="w-4 h-4 rounded-full bg-gradient-to-r from-red-400 to-pink-500 animate-pulse shadow-[0_0_20px_#f87171]"
+                                            >
                                                 <div className="w-full h-full rounded-full bg-red-300/50 animate-ping"></div>
                                             </motion.div>
                                         ) : (
@@ -137,7 +149,8 @@ export default function ParallelClientPage() {
                                                 animate={{ scale: 1, rotate: 0 }}
                                                 exit={{ scale: 0, rotate: 180 }}
                                                 transition={{ type: "spring", stiffness: 500 }}
-                                                className="w-4 h-4 rounded-full bg-gradient-to-r from-emerald-400 to-green-500 animate-pulse shadow-[0_0_20px_#10b981]">
+                                                className="w-4 h-4 rounded-full bg-gradient-to-r from-emerald-400 to-green-500 animate-pulse shadow-[0_0_20px_#10b981]"
+                                            >
                                                 <div className="w-full h-full rounded-full bg-emerald-300/50 animate-ping"></div>
                                             </motion.div>
                                         )}
@@ -145,7 +158,8 @@ export default function ParallelClientPage() {
                                     <motion.span
                                         className={`text-sm font-bold tracking-wider uppercase ${isLoading ? "text-yellow-300" : error ? "text-red-300" : "text-emerald-300"}`}
                                         animate={{ opacity: [0.7, 1, 0.7] }}
-                                        transition={{ duration: 1.5, repeat: Infinity }}>
+                                        transition={{ duration: 1.5, repeat: Infinity }}
+                                    >
                                         {isLoading ? "Syncing" : error ? "Offline" : "Live"}
                                     </motion.span>
                                 </div>
@@ -155,7 +169,8 @@ export default function ParallelClientPage() {
                                     initial={{ opacity: 0, y: 20, scale: 0.8 }}
                                     animate={{ opacity: 1, y: 0, scale: 1 }}
                                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                    className="flex-1 text-left">
+                                    className="flex-1 text-left"
+                                >
                                     <p className="text-2xl font-mono font-black text-white tracking-wider drop-shadow-lg">{currentTime}</p>
                                 </motion.div>
                             </motion.div>
