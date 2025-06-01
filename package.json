@@ -11,6 +11,7 @@
     "workspaces": [
         "config/*",
         "source/__main__",
+        "source/servers/**",
         "source/clusters/**"
     ],
     "author": {
