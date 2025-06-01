@@ -83,3 +83,5 @@ cosmic.yaml
 *.mp4
 *.mov
 *.svg.bak
+drizzle/meta/
+*.sql

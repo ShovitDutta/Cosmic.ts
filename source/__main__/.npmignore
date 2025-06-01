@@ -21,7 +21,6 @@ yarn-error.log*
 .gitkeep
 .DS_Store
 .idea/
-.vscode/
 *.iml
 .eslintcache
 .prettiercache
@@ -80,6 +79,8 @@ tmp/
 *.mov
 *.svg.bak
 *.db
+*.db-journal
 *.sqlite
 *.sqlite3
-migration/
+drizzle/meta/
+*.sql

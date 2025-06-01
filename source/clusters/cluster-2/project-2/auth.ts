@@ -7,8 +7,8 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 export const { handlers, auth, signIn, signOut } = NextAuth({
     providers: [Google, Discord, GitHub],
     adapter: PrismaAdapter(new PrismaClient()),
-    pages: { signIn: "/", error: "/api/auth/error" },
     basePath: process.env.NEXT_PUBLIC_BASE_PATH + "/api/auths",
+    pages: { signIn: "/", signOut: "/", error: "/api/auth/error" },
     ...(process.env.NODE_ENV === "production"
         ? {
               logger: {

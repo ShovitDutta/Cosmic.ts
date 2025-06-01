@@ -28,7 +28,6 @@ tmp/
 *.orig
 .DS_Store
 .idea/
-.vscode/
 *.iml
 .eslintcache
 .prettiercache
@@ -52,6 +51,7 @@ credentials.json
 .git-credentials
 .htpasswd
 *.db
+*.db-journal
 *.sqlite
 *.sqlite3
 migration/
@@ -68,3 +68,5 @@ cosmic.yaml
 *.mp4
 *.mov
 *.svg.bak
+drizzle/meta/
+*.sql

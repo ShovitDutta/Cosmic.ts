@@ -1,7 +1,7 @@
 {
     "ui": "tui",
     "$schema": "https://turborepo.com/schema.json",
-    "globalEnv": ["NODE_ENV", "NEXT_PUBLIC_BASE_PORT"],
+    "globalEnv": ["NODE_ENV", "DATABASE_URL", "NEXT_PUBLIC_BASE_PORT", "NEXT_PUBLIC_CONNECT_PEERS", "NEXT_PUBLIC_BASE_PATH"],
     "tasks": {
         "build": {
             "dependsOn": ["^build"],
