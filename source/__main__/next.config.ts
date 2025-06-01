@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 const basePeers = process.env.NEXT_PUBLIC_CONNECT_PEERS;
 import { commonNextConfig } from "@cosmic/next";
 import type { NextConfig } from "next";

@@ -37,11 +37,11 @@
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
-        "check-types": "turbo run check-types",
-        "build": "turbo run build",
-        "start": "turbo run start",
-        "lint": "turbo run lint",
-        "dev": "turbo run dev"
+        "check-types": "turbo --color run check-types",
+        "build": "turbo --color run build",
+        "start": "turbo --color run start",
+        "lint": "turbo --color run lint",
+        "dev": "turbo --color run dev"
     },
     "config": {
         "commitizen": {
