@@ -11,9 +11,9 @@
         "react-dom": "^19.1.0"
     },
     "devDependencies": {
+        "@next/eslint-plugin-next": "^15.3.0",
         "@types/node": "^22.15.3",
         "@types/react": "^19.1.0",
-        "@types/react-dom": "^19.1.1",
-        "@next/eslint-plugin-next": "^15.3.0"
+        "@types/react-dom": "^19.1.1"
     }
 }

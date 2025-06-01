@@ -23,11 +23,11 @@
         "react": "^19"
     },
     "devDependencies": {
-        "prettier-plugin-tailwindcss": "^0.6.11",
         "@cosmic/tailwind-config": "*",
+        "@cosmic/typescript": "*",
         "@tailwindcss/cli": "^4.1.5",
         "@types/react": "^19.1.0",
-        "@cosmic/typescript": "*",
+        "prettier-plugin-tailwindcss": "^0.6.11",
         "tailwindcss": "^4.1.5"
     }
 }
