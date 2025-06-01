@@ -1,7 +1,7 @@
+const basePeers = process.env.NEXT_PUBLIC_CONNECT_PEERS;
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
 const basePort = process.env.NEXT_PUBLIC_BASE_PORT;
-const basePeers = process.env.NEXT_PUBLIC_CONNECT_PEERS;
-import { commonNextConfig } from "@cosmic/next-config";
+import { commonNextConfig } from "@cosmic/next";
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
     basePath: basePath,

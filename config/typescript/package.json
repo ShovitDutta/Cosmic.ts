@@ -1,0 +1,17 @@
+{
+    "private": true,
+    "version": "0.0.0",
+    "name": "@cosmic/typescript",
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "glob": "^11.0.2",
+        "turbo": "^2.5.3",
+        "colors": "^1.4.0",
+        "dotenv": "^16.5.0",
+        "prettier": "^3.5.3",
+        "openai": "^4.103.0",
+        "typescript": "^5.8.2"
+    }
+}

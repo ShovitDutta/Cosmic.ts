@@ -1,5 +1,5 @@
 const basePeers = process.env.NEXT_PUBLIC_CONNECT_PEERS;
-import { commonNextConfig } from "@cosmic/next-config";
+import { commonNextConfig } from "@cosmic/next";
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
     ...commonNextConfig,

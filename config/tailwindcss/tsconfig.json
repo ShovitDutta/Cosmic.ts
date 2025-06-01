@@ -2,5 +2,5 @@
     "include": ["src"],
     "compilerOptions": { "outDir": "dist" },
     "exclude": ["dist", "build", "node_modules"],
-    "extends": "@cosmic/typescript-config/react-library.json"
+    "extends": "@cosmic/typescript/react-library.json"
 }

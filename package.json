@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.0.0",
     "name": "cosmic.ts",
-    "license": "Apache-2.0",
+    "license": "UNLICENSED",
     "engines": {
         "node": ">=18"
     },
@@ -20,9 +20,9 @@
     "description": "A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ShovitDutta/cosmic.ts.git"
+        "url": "git+https://github.com/ShovitDutta/Cosmic.ts.git"
     },
-    "homepage": "https://github.com/ShovitDutta/cosmic.ts",
+    "homepage": "https://github.com/ShovitDutta/Cosmic.ts",
     "scripts": {
         "========================================: Docker": "========================================",
         "docker:start": "yarn docker:stop && yarn docker:build && yarn docker:publish",
@@ -31,25 +31,16 @@
         "docker:prune": "docker system prune --all --force",
         "docker:stop": "docker rmi --force cosmic.ts",
         "========================================: System": "========================================",
-        "commit": "git add . && node config/scripts/commit.js",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-        "clean": "node config/scripts/clean.js",
-        "setup": "node config/scripts/setup.js",
+        "commit": "git add . && node scripts/commit.js",
+        "clean": "node scripts/clean.js",
+        "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
         "check-types": "turbo run check-types",
         "build": "turbo run build",
         "start": "turbo run start",
         "lint": "turbo run lint",
         "dev": "turbo run dev"
-    },
-    "devDependencies": {
-        "colors": "^1.4.0",
-        "dotenv": "^16.5.0",
-        "glob": "^11.0.2",
-        "openai": "^4.103.0",
-        "prettier": "^3.5.3",
-        "turbo": "^2.5.3",
-        "prettier-plugin-tailwindcss": "^0.6.11"
     },
     "config": {
         "commitizen": {
