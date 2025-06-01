@@ -7,9 +7,6 @@ BASE:
       DATABASE_URL: "__main__.db"
       NEXT_PUBLIC_BASE_PORT: 3000
       AUTH_TRUST_HOST: "true"
-      AUTH_SECRET: "undefined"
-      AUTH_GOOGLE_ID: "undefined"
-      AUTH_GOOGLE_SECRET: "undefined"
       AUTH_URL: "http://localhost:8000"
       GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:3000/api/auth/callback/google"
       CONNECT_PEERS: "http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"
@@ -24,9 +21,6 @@ CLUSTERS:
           DATABASE_URL: "cluster-1-project-1.db"
           NEXT_PUBLIC_BASE_PORT: 4001
           AUTH_TRUST_HOST: "true"
-          AUTH_SECRET: "undefined"
-          AUTH_GOOGLE_ID: "undefined"
-          AUTH_GOOGLE_SECRET: "undefined"
           AUTH_URL: "http://localhost:8000/cluster-1/project-1"
           GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:4001/cluster-1/project-1/api/auth/callback/google"
           CONNECT_PEERS: "http://localhost:8000,http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"
@@ -38,9 +32,6 @@ CLUSTERS:
           DATABASE_URL: "cluster-1-project-2.db"
           NEXT_PUBLIC_BASE_PORT: 4002
           AUTH_TRUST_HOST: "true"
-          AUTH_SECRET: "undefined"
-          AUTH_GOOGLE_ID: "undefined"
-          AUTH_GOOGLE_SECRET: "undefined"
           AUTH_URL: "http://localhost:8000/cluster-1/project-2"
           GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:4002/cluster-1/project-2/api/auth/callback/google"
           CONNECT_PEERS: "http://localhost:8000,http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"
@@ -54,9 +45,6 @@ CLUSTERS:
           DATABASE_URL: "cluster-2-project-1.db"
           NEXT_PUBLIC_BASE_PORT: 5001
           AUTH_TRUST_HOST: "true"
-          AUTH_SECRET: "undefined"
-          AUTH_GOOGLE_ID: "undefined"
-          AUTH_GOOGLE_SECRET: "undefined"
           AUTH_URL: "http://localhost:8000/cluster-2/project-1"
           GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:5001/cluster-2/project-1/api/auth/callback/google"
           CONNECT_PEERS: "http://localhost:8000,http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"
@@ -68,9 +56,6 @@ CLUSTERS:
           DATABASE_URL: "cluster-2-project-2.db"
           NEXT_PUBLIC_BASE_PORT: 5002
           AUTH_TRUST_HOST: "true"
-          AUTH_SECRET: "undefined"
-          AUTH_GOOGLE_ID: "undefined"
-          AUTH_GOOGLE_SECRET: "undefined"
           AUTH_URL: "http://localhost:8000/cluster-2/project-2"
           GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:5002/cluster-2/project-2/api/auth/callback/google"
           CONNECT_PEERS: "http://localhost:8000,http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"
