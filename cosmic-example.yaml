@@ -20,8 +20,8 @@ CLUSTERS:
         PORT: 4001
         COMMAND: /bin/sh -ec "yarn build && yarn start"
         ENVIRONMENT_VARIABLES:
-          DATABASE_URL: "cluster-1-project-1.db"
           NEXT_PUBLIC_BASE_PATH: "/cluster-1/project-1"
+          DATABASE_URL: "cluster-1-project-1.db"
           NEXT_PUBLIC_BASE_PORT: 4001
           AUTH_TRUST_HOST: "true"
           AUTH_SECRET: "undefined"
@@ -34,8 +34,8 @@ CLUSTERS:
         PORT: 4002
         COMMAND: /bin/sh -ec "yarn build && yarn start"
         ENVIRONMENT_VARIABLES:
-          DATABASE_URL: "cluster-1-project-2.db"
           NEXT_PUBLIC_BASE_PATH: "/cluster-1/project-2"
+          DATABASE_URL: "cluster-1-project-2.db"
           NEXT_PUBLIC_BASE_PORT: 4002
           AUTH_TRUST_HOST: "true"
           AUTH_SECRET: "undefined"
@@ -50,8 +50,8 @@ CLUSTERS:
         PORT: 5001
         COMMAND: /bin/sh -ec "yarn build && yarn start"
         ENVIRONMENT_VARIABLES:
-          DATABASE_URL: "cluster-2-project-1.db"
           NEXT_PUBLIC_BASE_PATH: "/cluster-2/project-1"
+          DATABASE_URL: "cluster-2-project-1.db"
           NEXT_PUBLIC_BASE_PORT: 5001
           AUTH_TRUST_HOST: "true"
           AUTH_SECRET: "undefined"
@@ -64,8 +64,8 @@ CLUSTERS:
         PORT: 5002
         COMMAND: /bin/sh -ec "yarn build && yarn start"
         ENVIRONMENT_VARIABLES:
-          DATABASE_URL: "cluster-2-project-2.db"
           NEXT_PUBLIC_BASE_PATH: "/cluster-2/project-2"
+          DATABASE_URL: "cluster-2-project-2.db"
           NEXT_PUBLIC_BASE_PORT: 5002
           AUTH_TRUST_HOST: "true"
           AUTH_SECRET: "undefined"
