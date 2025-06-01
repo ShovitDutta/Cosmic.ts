@@ -1,5 +1,11 @@
+import { handleCorsPreflight, setCorsHeaders } from "../../../utils/CorsHeaders";
+import { basePath, basePort } from "../../../utils/dynamicEnv";
 import { NextResponse } from "next/server";
-import { basePort, basePath } from "../../../utils/dynamicEnv";
-export async function GET() {
-    return NextResponse.json({ basePort, basePath });
+export async function GET(request: Request) {
+    const response = NextResponse.json({ message: `${basePort}${basePath} > Has Connected!` });
+    setCorsHeaders(request, response);
+    return response;
+}
+export async function OPTIONS(request: Request) {
+    return handleCorsPreflight(request);
 }
