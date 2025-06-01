@@ -33,6 +33,7 @@
         "========================================: System": "========================================",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "commit": "git add . && node scripts/commit.js",
+        "update": "node scripts/update.js",
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
