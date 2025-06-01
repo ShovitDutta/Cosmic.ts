@@ -30,43 +30,39 @@ async function findAndDelete(currentPath) {
                     } catch (err) {
                         process.stderr.write(`Failed to delete directory ${fullPath}: ${err.message}\n`);
                     }
-                } else if (dirent.name === "prisma") {
-                    const prismaContents = await fs.readdir(fullPath, { withFileTypes: true });
-                    for (const prismaItem of prismaContents) {
-                        const prismaItemPath = join(fullPath, prismaItem.name);
-                        if (prismaItem.isDirectory() && prismaItem.name === "migrations") {
-                            process.stdout.write(`Deleting directory: ${prismaItemPath}\n`);
+                } else if (dirent.name === "drizzle") {
+                    const drizzleContents = await fs.readdir(fullPath, { withFileTypes: true });
+                    for (const drizzleItem of drizzleContents) {
+                        const drizzleItemPath = join(fullPath, drizzleItem.name);
+                        if (drizzleItem.isDirectory() && drizzleItem.name === "meta") {
+                            process.stdout.write(`Deleting directory: ${drizzleItemPath}\n`);
                             try {
-                                if (isWindows) await executeCommand("rmdir", ["/s", "/q", prismaItemPath]);
-                                else await executeCommand("rm", ["-rf", prismaItemPath]);
+                                if (isWindows) await executeCommand("rmdir", ["/s", "/q", drizzleItemPath]);
+                                else await executeCommand("rm", ["-rf", drizzleItemPath]);
                                 deletedCount++;
                             } catch (err) {
-                                process.stderr.write(`Failed to delete directory ${prismaItemPath}: ${err.message}\n`);
-                            }
-                        } else if (prismaItem.isFile() && (prismaItem.name.endsWith(".db") || prismaItem.name.endsWith(".db-journal"))) {
-                            process.stdout.write(`Deleting file: ${prismaItemPath}\n`);
-                            try {
-                                if (isWindows) await executeCommand("del", ["/f", "/q", prismaItemPath]);
-                                else await executeCommand("rm", ["-f", prismaItemPath]);
-                                deletedCount++;
-                            } catch (err) {
-                                process.stderr.write(`Failed to delete file ${prismaItemPath}: ${err.message}\n`);
+                                process.stderr.write(`Failed to delete directory ${drizzleItemPath}: ${err.message}\n`);
                             }
                         }
                     }
                     await findAndDelete(fullPath);
                 } else await findAndDelete(fullPath);
+            } else if (dirent.isFile() && (dirent.name.endsWith(".db") || dirent.name.endsWith(".sql"))) {
+                process.stdout.write(`Deleting file: ${fullPath}\n`);
+                try {
+                    if (isWindows) await executeCommand("del", ["/f", "/q", fullPath]);
+                    else await executeCommand("rm", ["-f", fullPath]);
+                    deletedCount++;
+                } catch (err) {
+                    process.stderr.write(`Failed to delete file ${fullPath}: ${err.message}\n`);
+                }
             }
         }
     } catch (error) {
-        if (error.code === "ENOENT" || error.code === "EPERM" || error.code === "EACCES") {
-            process.stderr.write(`Skipping inaccessible path ${currentPath}: ${error.message}\n`);
-        } else {
-            process.stderr.write(`Error reading directory ${currentPath}: ${error.message}\n`);
-        }
+        if (error.code === "ENOENT" || error.code === "EPERM" || error.code === "EACCES") process.stderr.write(`Skipping inaccessible path ${currentPath}: ${error.message}\n`);
+        else process.stderr.write(`Error reading directory ${currentPath}: ${error.message}\n`);
     }
 }
-
 (async () => {
     process.stdout.write("Starting clean-up process...\n");
     const rootDir = process.cwd();
