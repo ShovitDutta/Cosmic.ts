@@ -1,6 +1,8 @@
 {
     "private": true,
+    "type": "module",
     "version": "0.0.0",
+    "license": "UNLICENSED",
     "name": "@cosmic/typescript",
     "publishConfig": {
         "access": "public"

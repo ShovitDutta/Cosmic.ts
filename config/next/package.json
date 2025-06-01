@@ -1,7 +1,9 @@
 {
     "private": true,
+    "type": "module",
     "version": "0.0.0",
     "name": "@cosmic/next",
+    "license": "UNLICENSED",
     "types": "./dist/index.d.ts",
     "dependencies": {
         "next": "^15.3.0",

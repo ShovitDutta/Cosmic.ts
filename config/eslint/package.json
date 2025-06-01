@@ -2,6 +2,7 @@
     "private": true,
     "type": "module",
     "version": "0.0.0",
+    "license": "UNLICENSED",
     "name": "@cosmic/eslint",
     "exports": {
         "./base": "./base.js",
