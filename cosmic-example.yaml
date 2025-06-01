@@ -1,0 +1,76 @@
+HOST_PORT: 8000
+BASE:
+  - NAME: main
+    PORT: 3000
+    COMMAND: /bin/sh -ec "yarn build && yarn start"
+    ENVIRONMENT_VARIABLES:
+      DATABASE_URL: "file:./__main__.db"
+      NEXT_PUBLIC_BASE_PORT: 3000
+      AUTH_TRUST_HOST: "true"
+      AUTH_SECRET: "undefined"
+      AUTH_GOOGLE_ID: "undefined"
+      AUTH_GOOGLE_SECRET: "undefined"
+      AUTH_URL: "http://localhost:8000"
+      GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:3000/api/auth/callback/google"
+      CONNECT_PEERS: "http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"
+CLUSTERS:
+  - NAME: cluster-1
+    PROJECTS:
+      - NAME: project-1
+        PORT: 4001
+        COMMAND: /bin/sh -ec "yarn build && yarn start"
+        ENVIRONMENT_VARIABLES:
+          DATABASE_URL: "file:./cluster-1-project-1.db"
+          NEXT_PUBLIC_BASE_PATH: "/cluster-1/project-1"
+          NEXT_PUBLIC_BASE_PORT: 4001
+          AUTH_TRUST_HOST: "true"
+          AUTH_SECRET: "undefined"
+          AUTH_GOOGLE_ID: "undefined"
+          AUTH_GOOGLE_SECRET: "undefined"
+          AUTH_URL: "http://localhost:8000/cluster-1/project-1"
+          GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:4001/cluster-1/project-1/api/auth/callback/google"
+          CONNECT_PEERS: "http://localhost:8000,http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"
+      - NAME: project-2
+        PORT: 4002
+        COMMAND: /bin/sh -ec "yarn build && yarn start"
+        ENVIRONMENT_VARIABLES:
+          DATABASE_URL: "file:./cluster-1-project-2.db"
+          NEXT_PUBLIC_BASE_PATH: "/cluster-1/project-2"
+          NEXT_PUBLIC_BASE_PORT: 4002
+          AUTH_TRUST_HOST: "true"
+          AUTH_SECRET: "undefined"
+          AUTH_GOOGLE_ID: "undefined"
+          AUTH_GOOGLE_SECRET: "undefined"
+          AUTH_URL: "http://localhost:8000/cluster-1/project-2"
+          GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:4002/cluster-1/project-2/api/auth/callback/google"
+          CONNECT_PEERS: "http://localhost:8000,http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"
+  - NAME: cluster-2
+    PROJECTS:
+      - NAME: project-1
+        PORT: 5001
+        COMMAND: /bin/sh -ec "yarn build && yarn start"
+        ENVIRONMENT_VARIABLES:
+          DATABASE_URL: "file:./cluster-2-project-1.db"
+          NEXT_PUBLIC_BASE_PATH: "/cluster-2/project-1"
+          NEXT_PUBLIC_BASE_PORT: 5001
+          AUTH_TRUST_HOST: "true"
+          AUTH_SECRET: "undefined"
+          AUTH_GOOGLE_ID: "undefined"
+          AUTH_GOOGLE_SECRET: "undefined"
+          AUTH_URL: "http://localhost:8000/cluster-2/project-1"
+          GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:5001/cluster-2/project-1/api/auth/callback/google"
+          CONNECT_PEERS: "http://localhost:8000,http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"
+      - NAME: project-2
+        PORT: 5002
+        COMMAND: /bin/sh -ec "yarn build && yarn start"
+        ENVIRONMENT_VARIABLES:
+          DATABASE_URL: "file:./cluster-2-project-2.db"
+          NEXT_PUBLIC_BASE_PATH: "/cluster-2/project-2"
+          NEXT_PUBLIC_BASE_PORT: 5002
+          AUTH_TRUST_HOST: "true"
+          AUTH_SECRET: "undefined"
+          AUTH_GOOGLE_ID: "undefined"
+          AUTH_GOOGLE_SECRET: "undefined"
+          AUTH_URL: "http://localhost:8000/cluster-2/project-2"
+          GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:5002/cluster-2/project-2/api/auth/callback/google"
+          CONNECT_PEERS: "http://localhost:8000,http://localhost:8000/cluster-1/project-1,http://localhost:8000/cluster-1/project-2,http://localhost:8000/cluster-2/project-1,http://localhost:8000/cluster-2/project-2"

@@ -1,0 +1,59 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "name": "cosmic.ts",
+    "license": "Apache-2.0",
+    "engines": {
+        "node": ">=18"
+    },
+    "packageManager": "yarn@1.22.22",
+    "workspaces": [
+        "config/*",
+        "source/__main__",
+        "source/clusters/**"
+    ],
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "description": "A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ShovitDutta/cosmic.ts.git"
+    },
+    "homepage": "https://github.com/ShovitDutta/cosmic.ts",
+    "scripts": {
+        "========================================: Docker": "========================================",
+        "docker:start": "yarn docker:stop && yarn docker:build && yarn docker:publish",
+        "docker:publish": "docker run --publish 8000:8000 --name cosmic.ts cosmic.ts",
+        "docker:build": "docker build --tag cosmic.ts -f dockerfile .",
+        "docker:prune": "docker system prune --all --force",
+        "docker:stop": "docker rmi --force cosmic.ts",
+        "========================================: System": "========================================",
+        "commit": "git add . && node config/scripts/commit.js",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "setup": "node config/scripts/setup.js",
+        "clean": "node config/scripts/clean.js",
+        "========================================: Turbo": "========================================",
+        "check-types": "turbo run check-types",
+        "build": "turbo run build",
+        "start": "turbo run start",
+        "lint": "turbo run lint",
+        "dev": "turbo run dev"
+    },
+    "devDependencies": {
+        "colors": "^1.4.0",
+        "dotenv": "^16.5.0",
+        "glob": "^11.0.2",
+        "openai": "^4.103.0",
+        "prettier": "^3.5.3",
+        "prettier-plugin-tailwindcss": "^0.6.11",
+        "turbo": "^2.5.3"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    }
+}

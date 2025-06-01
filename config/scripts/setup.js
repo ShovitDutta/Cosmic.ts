@@ -1,0 +1,137 @@
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+import fs from "fs";
+import path from "path";
+import yaml from "js-yaml";
+import colors from "colors";
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+function generateSupervisordConf(projects) {
+    let programBlocks = "";
+    for (const project of projects) {
+        const envVars = Object.entries(project.environment || {})
+            .map(([key, value]) => `${key}="${value}"`)
+            .join(",");
+        programBlocks += `\n`;
+        programBlocks += `[program:${project.name}]\n`;
+        programBlocks += `autostart=true\n`;
+        programBlocks += `autorestart=true\n`;
+        programBlocks += `stdout_logfile_maxbytes=0\n`;
+        programBlocks += `stderr_logfile_maxbytes=0\n`;
+        programBlocks += `stdout_logfile=/dev/stdout\n`;
+        programBlocks += `stderr_logfile=/dev/stderr\n`;
+        programBlocks += `directory=${project.directory_path}\n`;
+        programBlocks += `command=${project.command}\n`;
+        if (envVars) programBlocks += `environment=${envVars}\n`;
+    }
+    const supervisordConfTemplate =
+        `[supervisord]\n` +
+        `user=root\n` +
+        `nodaemon=true\n` +
+        `\n` +
+        `[program:nginx]\n` +
+        `autostart=true\n` +
+        `autorestart=true\n` +
+        `stdout_logfile_maxbytes=0\n` +
+        `stderr_logfile_maxbytes=0\n` +
+        `stdout_logfile=/dev/stdout\n` +
+        `stderr_logfile=/dev/stderr\n` +
+        `command=/usr/sbin/nginx -g "daemon off;"\n` +
+        `\n` +
+        `[program:database-services]\n` +
+        `autostart=true\n` +
+        `autorestart=true\n` +
+        `stdout_logfile_maxbytes=0\n` +
+        `stderr_logfile_maxbytes=0\n` +
+        `stdout_logfile=/dev/stdout\n` +
+        `stderr_logfile=/dev/stderr\n` +
+        `directory=/app/source/database\n` +
+        `command=docker-compose -f docker-compose.yml up\n` +
+        programBlocks;
+    return supervisordConfTemplate;
+}
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+function generateNginxConf(projects, nginxPort) {
+    let upstreamBlocks = "";
+    let locationBlocks = "";
+    for (const project of projects) {
+        const projectBasePath = project.base_path;
+        upstreamBlocks += `    upstream ${project.name} {\n`;
+        upstreamBlocks += `        server localhost:${project.port};\n`;
+        upstreamBlocks += `    }\n`;
+        locationBlocks += `        location ${projectBasePath} {\n`;
+        locationBlocks += `            proxy_pass http://${project.name};\n`;
+        locationBlocks += `            proxy_set_header Host $proxy_host;\n`;
+        locationBlocks += `            proxy_set_header X-Real-IP $remote_addr;\n`;
+        locationBlocks += `            proxy_set_header X-Forwarded-Proto $scheme;\n`;
+        locationBlocks += `            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;\n`;
+        locationBlocks += `        }\n`;
+    }
+    const nginxConfTemplate =
+        `worker_processes auto;\n` +
+        `events {\n` +
+        `    worker_connections 1024;\n` +
+        `}\n` +
+        `http {\n` +
+        `    sendfile on;\n` +
+        `    keepalive_timeout 65;\n` +
+        `    include /etc/nginx/mime.types;\n` +
+        `    default_type application/octet-stream;\n` +
+        upstreamBlocks +
+        `    server {\n` +
+        `        listen ${nginxPort};\n` +
+        `        server_name localhost;\n` +
+        locationBlocks +
+        `    }\n` +
+        `}`;
+    return nginxConfTemplate;
+}
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
+(async () => {
+    const supervisordConfPath = path.join(process.cwd(), "docker", "supervisord.conf");
+    const nginxConfPath = path.join(process.cwd(), "docker", "nginx.conf");
+    const repoYamlPath = path.join(process.cwd(), "cosmic.yaml");
+    if (!fs.existsSync(repoYamlPath)) {
+        console.error(`${colors.red("[error]:")} The 'cosmic.yaml' file was not found at ${repoYamlPath}. Please read the 'README.md' and create it to proceed. `);
+        return;
+    }
+    try {
+        console.log(`${colors.blue("[cosmic.yaml]:")} Reading 'cosmic.yaml' from ${repoYamlPath} ...`);
+        const fileContents = fs.readFileSync(repoYamlPath, "utf8");
+        const config = yaml.load(fileContents);
+        const nginxPort = config.HOST_PORT || 8000;
+        const projects = [];
+        if (config.BASE && config.BASE.length > 0) {
+            const baseApp = config.BASE[0];
+            projects.push({
+                name: baseApp.NAME,
+                port: baseApp.PORT,
+                command: baseApp.COMMAND,
+                environment: baseApp.ENVIRONMENT_VARIABLES,
+                base_path: baseApp.ENVIRONMENT_VARIABLES?.NEXT_PUBLIC_BASE_PATH || "/",
+                directory_path: "/app/source/__main__"
+            });
+        }
+        if (config.CLUSTERS) {
+            for (const cluster of config.CLUSTERS) {
+                for (const repo of cluster.PROJECTS) {
+                    projects.push({
+                        port: repo.PORT,
+                        command: repo.COMMAND,
+                        name: `${cluster.NAME}-${repo.NAME}`,
+                        environment: repo.ENVIRONMENT_VARIABLES,
+                        base_path: repo.ENVIRONMENT_VARIABLES?.NEXT_PUBLIC_BASE_PATH,
+                        directory_path: `/app/source/clusters/${cluster.NAME}/${repo.NAME}`,
+                    });
+                }
+            }
+        }
+        const supervisordContent = generateSupervisordConf(projects);
+        const nginxContent = generateNginxConf(projects, nginxPort);
+        fs.writeFileSync(supervisordConfPath, supervisordContent);
+        console.log(`${colors.green("[supervisord.conf]:")} generated ${supervisordConfPath}`);
+        fs.writeFileSync(nginxConfPath, nginxContent);
+        console.log(`${colors.green("[nginx.conf]:")} generated ${nginxConfPath}`);
+    } catch (e) {
+        console.error(`${colors.red("[error]:")} Error generating configs: ${e.message}`);
+    }
+})();
+// = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = = =
