@@ -43,7 +43,13 @@
         "dev": "turbo run dev"
     },
     "devDependencies": {
-        "cosmic": "*"
+        "colors": "^1.4.0",
+        "dotenv": "^16.5.0",
+        "glob": "^11.0.2",
+        "openai": "^4.103.0",
+        "prettier": "^3.5.3",
+        "turbo": "^2.5.3",
+        "prettier-plugin-tailwindcss": "^0.6.11"
     },
     "config": {
         "commitizen": {
