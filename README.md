@@ -9,6 +9,14 @@ enhance code reuse, and simplify the management of complex web applications.
 
 ---
 
+## 📖 Documentation
+
+The comprehensive documentation for Cosmic.ts is **coming soon!**
+
+We're diligently working to provide detailed guides, API references, and examples to help you get the most out of this framework. Stay tuned for updates!
+
+---
+
 ## ⚙️ Example Configuration
 
 Below is an example configuration file that demonstrates how to set up your projects and clusters within Cosmic.ts. This file can be used as a starting point for your own `cosmic.yaml` configuration.
@@ -88,13 +96,3 @@ CLUSTERS:
                 GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:5002/cluster-2/project-2/api/auth/callback/google"
                 CONNECT_PEERS: "http://localhost:3000,http://localhost:4001,http://localhost:4002,http://localhost:5001,http://localhost:5002"
 ```
-
----
-
-## 📖 Documentation
-
-The comprehensive documentation for Cosmic.ts is **coming soon!**
-
-We're diligently working to provide detailed guides, API references, and examples to help you get the most out of this framework. Stay tuned for updates!
-
----
