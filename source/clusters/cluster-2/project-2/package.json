@@ -9,6 +9,7 @@
     "packageManager": "yarn@1.22.22",
     "scripts": {
         "drizzle-things": "drizzle-kit push --config=drizzle.config.ts && drizzle-kit generate --config=drizzle.config.ts && drizzle-kit migrate --config=drizzle.config.ts",
+        "prebuild": "drizzle-kit push --config=drizzle.config.ts && drizzle-kit generate --config=drizzle.config.ts",
         "lint": "next lint --max-warnings 0",
         "start": "node scripts/start.js",
         "check-types": "tsc --noEmit",
