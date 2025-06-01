@@ -1,3 +1,4 @@
+/* eslint-disable turbo/no-undeclared-env-vars */
 import * as schema from "./schema";
 import Database from "better-sqlite3";
 const databaseUrl = process.env.DATABASE_URL;
