@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "version": "0.0.0",
-    "name": "@cosmic/tui",
+    "name": "@cosmic/cli",
     "license": "UNLICENSED",
     "publishConfig": {
         "access": "public"

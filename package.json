@@ -38,7 +38,7 @@
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
-        "runner": "node config/tui/dist/index.js",
+        "runner": "node config/cli/dist/index.js",
         "check-types": "yarn runner check-types",
         "build": "yarn runner build",
         "start": "yarn runner start",
