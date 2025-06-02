@@ -8,11 +8,10 @@
         "access": "public"
     },
     "devDependencies": {
+        "turbo": "^2.5.3",
         "colors": "^1.4.0",
         "dotenv": "^16.5.0",
-        "openai": "^4.103.0",
         "prettier": "^3.5.3",
-        "turbo": "^2.5.3",
         "typescript": "^5.8.2"
     }
 }

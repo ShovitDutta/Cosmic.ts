@@ -8,29 +8,10 @@ import pluginReactHooks from "eslint-plugin-react-hooks";
 import eslintConfigPrettier from "eslint-config-prettier";
 export const nextJsConfig = [
     ...baseConfig,
-    js.configs.recommended,
     eslintConfigPrettier,
+    js.configs.recommended,
     ...tseslint.configs.recommended,
-    {
-        ...pluginReact.configs.flat.recommended,
-        languageOptions: {
-            globals: { ...globals.serviceworker },
-            ...pluginReact.configs.flat.recommended.languageOptions,
-        },
-    },
-    {
-        plugins: { "@next/next": pluginNext },
-        rules: {
-            ...pluginNext.configs.recommended.rules,
-            ...pluginNext.configs["core-web-vitals"].rules,
-        },
-    },
-    {
-        settings: { react: { version: "detect" } },
-        plugins: { "react-hooks": pluginReactHooks },
-        rules: {
-            "react/react-in-jsx-scope": "off",
-            ...pluginReactHooks.configs.recommended.rules,
-        },
-    },
+    { plugins: { "@next/next": pluginNext }, rules: { ...pluginNext.configs.recommended.rules, ...pluginNext.configs["core-web-vitals"].rules } },
+    { ...pluginReact.configs.flat.recommended, languageOptions: { globals: { ...globals.serviceworker }, ...pluginReact.configs.flat.recommended.languageOptions } },
+    { settings: { react: { version: "detect" } }, plugins: { "react-hooks": pluginReactHooks }, rules: { "react/react-in-jsx-scope": "off", ...pluginReactHooks.configs.recommended.rules } },
 ];

@@ -11,18 +11,6 @@ export const config = [
     js.configs.recommended,
     ...tseslint.configs.recommended,
     pluginReact.configs.flat.recommended,
-    {
-        languageOptions: {
-            ...pluginReact.configs.flat.recommended.languageOptions,
-            globals: { ...globals.serviceworker, ...globals.browser },
-        },
-    },
-    {
-        settings: { react: { version: "detect" } },
-        plugins: { "react-hooks": pluginReactHooks },
-        rules: {
-            "react/react-in-jsx-scope": "off",
-            ...pluginReactHooks.configs.recommended.rules,
-        },
-    },
+    { languageOptions: { ...pluginReact.configs.flat.recommended.languageOptions, globals: { ...globals.serviceworker, ...globals.browser } } },
+    { settings: { react: { version: "detect" } }, plugins: { "react-hooks": pluginReactHooks }, rules: { "react/react-in-jsx-scope": "off", ...pluginReactHooks.configs.recommended.rules } },
 ];
