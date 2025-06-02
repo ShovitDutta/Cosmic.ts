@@ -11,7 +11,6 @@
     "workspaces": [
         "config/*",
         "source/__main__",
-        "source/servers/**",
         "source/clusters/**"
     ],
     "author": {
@@ -38,8 +37,8 @@
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
+        "runner": "node config/cli/dist/index.js",
         "check-types": "yarn runner check-types",
-        "runner": "node config/cli/index.js",
         "build": "yarn runner build",
         "start": "yarn runner start",
         "lint": "yarn runner lint",
