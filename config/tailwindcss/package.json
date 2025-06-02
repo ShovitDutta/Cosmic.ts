@@ -1,0 +1,32 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "name": "@cosmos/tailwindcss",
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": "./shared-styles.css",
+        "./postcss": "./postcss.config.js",
+        "./styles.css": "./dist/index.css"
+    },
+    "scripts": {
+        "lint": "eslint src --max-warnings 0",
+        "build": "tailwindcss -i ./shared-styles.css -o ./dist/index.css",
+        "dev": "tailwindcss -i ./shared-styles.css -o ./dist/index.css --watch"
+    },
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.1.5",
+        "@tailwindcss/postcss": "^4.1.5",
+        "@types/react": "^19.1.0",
+        "postcss": "^8.5.3",
+        "prettier": "^3.3.2",
+        "prettier-plugin-tailwindcss": "^0.6.12",
+        "tailwindcss": "^4.1.5"
+    }
+}

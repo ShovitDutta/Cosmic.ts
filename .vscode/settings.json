@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/ios": true,
+        "**/.hg": true,
+        "**/out": true,
+        "**/dist": true,
+        "**/venv": true,
+        "**/.svn": true,
+        "**/.git": true,
+        "**/.expo": true,
+        "**/.next": true,
+        "**/.venv": true,
+        "**/.turbo": true,
+        "**/build": true,
+        "**/android": true,
+        "**/bun.lock": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/yarn.lock": true,
+        "**/pnpm.lock": true,
+        "**/node_modules": true,
+        "**/package-lock.json": true
+    }
+}
