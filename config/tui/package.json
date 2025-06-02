@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "name": "@cosmic/tui",
+    "license": "UNLICENSED",
+    "publishConfig": {
+        "access": "public"
+    },
+    "scripts": {
+        "postinstall": "tsc"
+    },
+    "devDependencies": {
+        "@types/blessed": "^0.1.25",
+        "@cosmic/typescript": "*",
+        "blessed": "^0.1.81",
+        "glob": "^11.0.2"
+    }
+}

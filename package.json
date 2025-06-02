@@ -38,11 +38,12 @@
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
-        "check-types": "turbo --color run check-types",
-        "build": "turbo --color run build",
-        "start": "turbo --color run start",
-        "lint": "turbo --color run lint",
-        "dev": "turbo --color run dev"
+        "runner": "node config/tui/dist/index.js",
+        "check-types": "yarn runner check-types",
+        "build": "yarn runner build",
+        "start": "yarn runner start",
+        "lint": "yarn runner lint",
+        "dev": "yarn runner dev"
     },
     "config": {
         "commitizen": {
