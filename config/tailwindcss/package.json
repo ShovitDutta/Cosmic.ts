@@ -11,13 +11,13 @@
         "dist"
     ],
     "exports": {
-        "./styles.css": "./dist/index.css",
-        "./*": "./dist/*.js"
+        "./*": "./dist/*.js",
+        "./styles.css": "./dist/index.css"
     },
     "scripts": {
-        "dev": "tailwindcss -i ./styles.css -o ./dist/index.css --watch",
+        "lint": "eslint src --max-warnings 0",
         "build": "tailwindcss -i ./styles.css -o ./dist/index.css",
-        "lint": "eslint src --max-warnings 0"
+        "dev": "tailwindcss -i ./styles.css -o ./dist/index.css --watch"
     },
     "devDependencies": {
         "@cosmic/tailwind-config": "*",
