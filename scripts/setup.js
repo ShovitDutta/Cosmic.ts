@@ -88,13 +88,13 @@ function generateNginxConf(projects, nginxPort) {
 (async () => {
     const supervisordConfPath = path.join(process.cwd(), "docker", "supervisord.conf");
     const nginxConfPath = path.join(process.cwd(), "docker", "nginx.conf");
-    const repoYamlPath = path.join(process.cwd(), "cosmic.yaml");
+    const repoYamlPath = path.join(process.cwd(), "cosmos.yaml");
     if (!fs.existsSync(repoYamlPath)) {
-        console.error(`${colors.red("[error]:")} The 'cosmic.yaml' file was not found at ${repoYamlPath}. Please read the 'README.md' and create it to proceed. `);
+        console.error(`${colors.red("[error]:")} The 'cosmos.yaml' file was not found at ${repoYamlPath}. Please read the 'README.md' and create it to proceed. `);
         return;
     }
     try {
-        console.log(`${colors.blue("[cosmic.yaml]:")} Reading 'cosmic.yaml' from ${repoYamlPath} ...`);
+        console.log(`${colors.blue("[cosmos.yaml]:")} Reading 'cosmos.yaml' from ${repoYamlPath} ...`);
         const fileContents = fs.readFileSync(repoYamlPath, "utf8");
         const config = yaml.load(fileContents);
         const nginxPort = config.HOST_PORT || 8000;

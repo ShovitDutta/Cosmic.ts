@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.0.0",
     "license": "UNLICENSED",
-    "name": "@cosmic/typescript",
+    "name": "@cosmos/typescript",
     "publishConfig": {
         "access": "public"
     },

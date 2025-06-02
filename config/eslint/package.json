@@ -3,7 +3,7 @@
     "type": "module",
     "version": "0.0.0",
     "license": "UNLICENSED",
-    "name": "@cosmic/eslint",
+    "name": "@cosmos/eslint",
     "exports": {
         "./base": "./base.js",
         "./next-js": "./next.js",

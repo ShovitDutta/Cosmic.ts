@@ -16,9 +16,14 @@
         "check-types": "tsc --noEmit",
         "build": "next build"
     },
+    "peerDependencies": {
+        "next": "^15.3.0",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0"
+    },
     "dependencies": {
         "@auth/drizzle-adapter": "^1.9.1",
-        "@cosmic/next": "*",
+        "@cosmos/next": "*",
         "@tanstack/react-query": "^5.79.0",
         "better-sqlite3": "^11.10.0",
         "drizzle-kit": "^0.31.1",
@@ -30,9 +35,9 @@
         "zustand": "^5.0.5"
     },
     "devDependencies": {
-        "@cosmic/eslint": "*",
-        "@cosmic/tailwindcss": "*",
-        "@cosmic/typescript": "*",
+        "@cosmos/eslint": "*",
+        "@cosmos/tailwindcss": "*",
+        "@cosmos/typescript": "*",
         "@next/eslint-plugin-next": "*",
         "@types/better-sqlite3": "^7.6.13"
     }

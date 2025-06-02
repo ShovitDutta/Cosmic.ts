@@ -58,7 +58,7 @@ migration/
 docker/
 Dockerfile.orig
 docker-compose.yml.bak
-cosmic.yaml
+cosmos.yaml
 .envrc
 .terraform/
 *.zip

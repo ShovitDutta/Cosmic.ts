@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "version": "0.0.0",
-    "name": "cosmic.ts",
+    "name": "cosmos.ts",
     "license": "UNLICENSED",
     "engines": {
         "node": ">=18"
@@ -26,10 +26,10 @@
     "scripts": {
         "========================================: Docker": "========================================",
         "docker:start": "yarn docker:stop && yarn docker:build && yarn docker:publish",
-        "docker:publish": "docker run --publish 8000:8000 --name cosmic.ts cosmic.ts",
-        "docker:build": "docker build --tag cosmic.ts -f dockerfile .",
+        "docker:publish": "docker run --publish 8000:8000 --name cosmos.ts cosmos.ts",
+        "docker:build": "docker build --tag cosmos.ts -f dockerfile .",
         "docker:prune": "docker system prune --all --force",
-        "docker:stop": "docker rmi --force cosmic.ts",
+        "docker:stop": "docker rmi --force cosmos.ts",
         "========================================: System": "========================================",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "commit": "git add . && node scripts/commit.js",
@@ -42,6 +42,12 @@
         "start": "turbo --color run start",
         "lint": "turbo --color run lint",
         "dev": "turbo --color run dev"
+    },
+    "devDependencies": {
+        "turbo": "^2.5.4",
+        "next": "^15.3.0",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0"
     },
     "config": {
         "commitizen": {

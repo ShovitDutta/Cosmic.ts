@@ -1,2 +1,2 @@
-import { postcssConfig } from "@cosmic/tailwindcss/postcss";
+import { postcssConfig } from "@cosmos/tailwindcss/postcss";
 export default postcssConfig;

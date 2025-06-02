@@ -148,7 +148,7 @@ promote modularity, scalability, and clear separation of concerns.
       monorepo, ensuring a clean development environment.
     - `scripts/commit.js`: An advanced script that automates Git commit message generation using an AI model (OpenRouter API) based on staged file diffs, enforcing
       [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/) and pushing changes. Requires `OPENROUTER_API_KEY`.
-    - `scripts/setup.js`: A critical orchestration script that reads `cosmic.yaml` and dynamically generates `docker/supervisord.conf` (for process management) and `docker/nginx.conf` (for reverse
+    - `scripts/setup.js`: A critical orchestration script that reads `cosmos.yaml` and dynamically generates `docker/supervisord.conf` (for process management) and `docker/nginx.conf` (for reverse
       proxy routing) based on the defined `BASE` and `CLUSTERS` configurations.
     - `scripts/update.js`: Recursively finds all `package.json` files within projects (excluding `node_modules`, `.turbo`, `.git`) and executes `yarn upgrade --latest --force` to update all project
       dependencies to their latest versions.
@@ -182,7 +182,7 @@ Follow these comprehensive steps to set up and run the Cosmic.ts project locally
     yarn install
     ```
     This command will hoist common dependencies to the root `node_modules` and link workspace packages, optimizing disk space and installation time.
-3.  **Setup the project:** The `yarn setup` script is crucial for initializing the project's runtime environment. It reads the `cosmic.yaml` configuration (which you need to create based on the
+3.  **Setup the project:** The `yarn setup` script is crucial for initializing the project's runtime environment. It reads the `cosmos.yaml` configuration (which you need to create based on the
     example provided in the [Runtime Configuration](#runtime-configuration) section) and dynamically generates `supervisord.conf` and `nginx.conf` files within the `docker/` directory. These files are
     essential for orchestrating the various applications and services within the Docker container.
 
@@ -192,7 +192,7 @@ Follow these comprehensive steps to set up and run the Cosmic.ts project locally
     yarn setup
     ```
 
-    > **Important:** Ensure you have created your `cosmic.yaml` file before running `yarn setup`, as the script will fail if it's not found. This script ensures that your local environment is ready
+    > **Important:** Ensure you have created your `cosmos.yaml` file before running `yarn setup`, as the script will fail if it's not found. This script ensures that your local environment is ready
     > for development and containerization.
 
 ### Environment Variables 🔑
@@ -228,7 +228,7 @@ This command, defined in the root `package.json` and configured by `turbo.json`,
 2.  **Start Development Server:** It will then start the Next.js development server for the `source/__main__` application.
 
 You can access the main application in your browser at `http://localhost:3000` (or the port configured by the `NEXT_PUBLIC_BASE_PORT` environment variable if it's set differently in your `.env` file
-or `cosmic.yaml`).
+or `cosmos.yaml`).
 
 To run other projects located within the `source/clusters/` directories, you can either navigate to their respective project directories and use their `dev` scripts (if available), or leverage
 TurboRepo's filtering capabilities from the monorepo root.
@@ -283,7 +283,7 @@ authentication providers.
 
 - **Configuration:** NextAuth.js configuration is typically found in `source/__main__/auth.ts` and `source/__main__/middleware.ts`. `auth.ts` defines the authentication providers (Google, GitHub,
   Discord), the Drizzle adapter for database persistence, and custom pages for authentication flows.
-- **Providers:** The example `cosmic.yaml` shows configuration for Google authentication (`AUTH_GOOGLE_ID`, `AUTH_GOOGLE_SECRET`, `GOOGLE_AUTHORIZED_REDIRECT_URL`). You can extend this to include
+- **Providers:** The example `cosmos.yaml` shows configuration for Google authentication (`AUTH_GOOGLE_ID`, `AUTH_GOOGLE_SECRET`, `GOOGLE_AUTHORIZED_REDIRECT_URL`). You can extend this to include
   other providers or credential-based authentication.
 - **Session Management:** NextAuth.js handles session creation, management, and validation, often storing session data in the database via `@auth/drizzle-adapter` as defined in
   `source/__main__/drizzle/schema.ts`.
@@ -310,7 +310,7 @@ The framework employs a combination of [Zustand](https://zustand-demo.pmnd.rs/) 
 ## Configuration ⚙️
 
 Cosmic.ts places a strong emphasis on centralized and reusable configurations, located within the `config/` workspace. This approach ensures consistency, reduces duplication, and simplifies
-maintenance across all projects in the monorepo. Each configuration package is consumed by individual projects via `@cosmic/` scoped imports.
+maintenance across all projects in the monorepo. Each configuration package is consumed by individual projects via `@cosmos/` scoped imports.
 
 ### ESLint 🧹
 
@@ -322,7 +322,7 @@ across all TypeScript and Next.js projects within the monorepo.
 - `next.js`: Extends the base configuration with rules specifically tailored for Next.js applications, including best practices for Next.js components and API routes.
 - `react-internal.js`: Provides ESLint rules for internal React components or libraries that might be shared across projects, ensuring consistent React coding patterns.
 
-Projects consume these configurations by adding `@cosmic/eslint` to their `devDependencies` and extending the configuration in their `eslint.config.js`.
+Projects consume these configurations by adding `@cosmos/eslint` to their `devDependencies` and extending the configuration in their `eslint.config.js`.
 
 ### Next.js 🌐
 
@@ -334,7 +334,7 @@ development environment.
   images from any HTTPS hostname.
 - `tsconfig.json`: Provides a base TypeScript configuration specifically optimized for Next.js projects, ensuring correct compilation and type checking.
 
-Projects integrate these configurations by importing from `@cosmic/next` in their `next.config.ts`.
+Projects integrate these configurations by importing from `@cosmos/next` in their `next.config.ts`.
 
 ### Tailwind CSS 🎨
 
@@ -346,7 +346,7 @@ utility-first styling across the monorepo.
 - `config/tailwindcss/styles.css`: Provides additional, project-specific Tailwind styles or overrides.
 - `config/tailwindcss/tsconfig.json`: TypeScript configuration for Tailwind-related files, ensuring proper type inference for utility classes.
 
-Projects consume these configurations via `@cosmic/tailwindcss` and `@cosmic/tailwind-config` imports.
+Projects consume these configurations via `@cosmos/tailwindcss` and `@cosmos/tailwind-config` imports.
 
 ### TypeScript 📝
 
@@ -357,7 +357,7 @@ Base TypeScript configurations are defined in `config/typescript/`. These config
 - `nextjs.json`: Extends the base configuration with settings specifically optimized for Next.js projects.
 - `react-library.json`: Provides TypeScript settings tailored for React libraries or components that are intended for reuse.
 
-Projects extend these configurations in their `tsconfig.json` files by referencing `@cosmic/typescript`.
+Projects extend these configurations in their `tsconfig.json` files by referencing `@cosmos/typescript`.
 
 ---
 
@@ -376,7 +376,7 @@ These scripts leverage TurboRepo to operate across the entire monorepo or perfor
   `yarn upgrade --latest --force` to update all project dependencies to their latest versions. This is a powerful tool for monorepo dependency management.
 - `yarn clean`: Runs `node scripts/clean.js`, a comprehensive cleanup script that recursively deletes `node_modules` directories, `.turbo` caches, `drizzle/meta` directories (Drizzle migration
   metadata), and database files (`.db`, `.sql`) across the entire monorepo, ensuring a clean development environment. It supports both Windows and Unix-like systems.
-- `yarn setup`: Executes `node scripts/setup.js`, a critical orchestration script. It reads the `cosmic.yaml` configuration (which defines the main application and clustered projects) and dynamically
+- `yarn setup`: Executes `node scripts/setup.js`, a critical orchestration script. It reads the `cosmos.yaml` configuration (which defines the main application and clustered projects) and dynamically
   generates `docker/supervisord.conf` (for process management within the Docker container) and `docker/nginx.conf` (for reverse proxy routing). This script is fundamental for setting up the
   multi-application runtime environment.
 - `yarn check-types`: Runs `turbo run check-types`, which triggers TypeScript type checking (`tsc --noEmit`) across all relevant projects in the monorepo, ensuring type safety and catching potential
@@ -391,13 +391,13 @@ These scripts leverage TurboRepo to operate across the entire monorepo or perfor
 
 These scripts facilitate Docker-based development and deployment workflows, integrating with the generated `supervisord.conf` and `nginx.conf`.
 
-- `yarn docker:start`: A composite command (`yarn docker:stop && yarn docker:build && yarn docker:publish`) that first stops any existing `cosmic.ts` Docker containers, then rebuilds the Docker image,
+- `yarn docker:start`: A composite command (`yarn docker:stop && yarn docker:build && yarn docker:publish`) that first stops any existing `cosmos.ts` Docker containers, then rebuilds the Docker image,
   and finally publishes (runs) the new container, making the application accessible.
-- `yarn docker:publish`: Runs the `cosmic.ts` Docker image, mapping host port 8000 to container port 8000, making the application accessible via the Nginx reverse proxy.
-- `yarn docker:build`: Builds the Docker image from the `dockerfile` in the root directory, tagging it as `cosmic.ts`.
+- `yarn docker:publish`: Runs the `cosmos.ts` Docker image, mapping host port 8000 to container port 8000, making the application accessible via the Nginx reverse proxy.
+- `yarn docker:build`: Builds the Docker image from the `dockerfile` in the root directory, tagging it as `cosmos.ts`.
 - `yarn docker:prune`: Executes `docker system prune --all --force` to remove all stopped containers, unused networks, and dangling images, freeing up disk space and ensuring a clean Docker
   environment.
-- `yarn docker:stop`: Removes the `cosmic.ts` Docker image, effectively stopping and cleaning up the running container.
+- `yarn docker:stop`: Removes the `cosmos.ts` Docker image, effectively stopping and cleaning up the running container.
 
 ### Main Application Scripts (`source/__main__/scripts/`)
 
@@ -411,15 +411,15 @@ These are specific scripts for the primary Next.js application, often called by 
 
 ## Runtime Configuration 🖥️
 
-Cosmic.ts is designed for flexible runtime configuration, primarily orchestrated through a conceptual `cosmic.yaml` file. This YAML structure defines how the main application (`BASE`) and various
+Cosmic.ts is designed for flexible runtime configuration, primarily orchestrated through a conceptual `cosmos.yaml` file. This YAML structure defines how the main application (`BASE`) and various
 clustered projects (`CLUSTERS`) are set up, including their network ports, execution commands, and crucial environment variables. This configuration is vital for managing complex deployments and
 ensuring proper inter-service communication.
 
-> **Note:** The `cosmic.yaml` file presented below is an _example configuration_ intended to illustrate the project's runtime setup. It is **not** a file that exists by default in the repository. You
+> **Note:** The `cosmos.yaml` file presented below is an _example configuration_ intended to illustrate the project's runtime setup. It is **not** a file that exists by default in the repository. You
 > would typically create or adapt such a configuration based on your specific deployment environment (e.g., using a process manager like PM2, Docker Compose, Kubernetes, or a custom orchestration
 > script that consumes this structure). The `yarn setup` script relies on this file to generate the necessary `supervisord.conf` and `nginx.conf` for Docker deployment.
 
-Below is a detailed breakdown of the example `cosmic.yaml` configuration:
+Below is a detailed breakdown of the example `cosmos.yaml` configuration:
 
 ```yaml
 HOST_PORT: 8000 # The main host port through which all applications (base and clusters) are exposed. This acts as a reverse proxy or gateway port for external access.
@@ -508,7 +508,7 @@ and should be handled with care during customization.
 - **Preserving Core Architecture:**
     - **Monorepo Structure (TurboRepo):** The `turbo.json` configuration and the `workspaces` definition in the root `package.json` are central to the monorepo's efficiency. Modifications here should
       be done with a clear understanding of TurboRepo's task orchestration and caching mechanisms.
-    - **Shared Configurations (`config/`):** The packages within the `config/` directory (`@cosmic/eslint`, `@cosmic/next`, `@cosmic/tailwind-config`, `@cosmic/tailwindcss`, `@cosmic/typescript`) are
+    - **Shared Configurations (`config/`):** The packages within the `config/` directory (`@cosmos/eslint`, `@cosmos/next`, `@cosmos/tailwind-config`, `@cosmos/tailwindcss`, `@cosmos/typescript`) are
       designed for consistency across all projects. When adding new projects or modifying existing ones, ensure they correctly consume these shared configurations to maintain a unified development
       environment.
     - **Drizzle ORM Patterns:** The database schema (`source/__main__/drizzle/schema.ts`) and migration scripts are integral to data management. When extending or modifying the database, adhere to
@@ -517,7 +517,7 @@ and should be handled with care during customization.
       security best practices are followed and that the integration remains robust.
 - **Environment Variables (`.env` files):** Always manage sensitive information (like `NEXTAUTH_SECRET`, API keys, etc.) through `.env` files and **never commit them to version control**. Ensure that
   `.env.example` files are updated to reflect all necessary variables for new developers.
-- **Runtime Configuration (`cosmic.yaml`):** The `cosmic.yaml` example illustrates how the main application and clustered projects are orchestrated. When deploying, you will need to implement a
+- **Runtime Configuration (`cosmos.yaml`):** The `cosmos.yaml` example illustrates how the main application and clustered projects are orchestrated. When deploying, you will need to implement a
   similar configuration using your chosen deployment tools (e.g., PM2, Docker Compose, Kubernetes) to correctly manage ports, commands, and environment variables for each service. Adapt this example
   to your production environment.
 - **Project Naming:** When creating new projects or clusters, ensure unique and descriptive names to maintain clarity within the monorepo.

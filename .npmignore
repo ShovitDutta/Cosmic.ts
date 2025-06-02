@@ -60,7 +60,7 @@ docker-compose.*.yml
 .gitlab-ci.yml
 Jenkinsfile
 docker/
-cosmic.yaml
+cosmos.yaml
 README.md
 CHANGELOG.md
 LICENSE.md
