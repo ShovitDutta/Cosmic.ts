@@ -20,9 +20,9 @@
     "description": "A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.",
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ShovitDutta/Cosmic.ts.git"
+        "url": "git+https://github.com/ShovitDutta/Cosmos.ts.git"
     },
-    "homepage": "https://github.com/ShovitDutta/Cosmic.ts",
+    "homepage": "https://github.com/ShovitDutta/Cosmos.ts",
     "scripts": {
         "========================================: Docker": "========================================",
         "docker:start": "yarn docker:stop && yarn docker:build && yarn docker:publish",

@@ -1,7 +1,7 @@
-# Cosmic.ts ✨
+# Cosmos.ts ✨
 
 <p align="left">
-  <img src="logo.png" alt="Cosmic.ts Logo" width="200"/>
+  <img src="logo.png" alt="Cosmos.ts Logo" width="200"/>
 </p>
 
 A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.
@@ -36,10 +36,10 @@ A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Mana
 
 ## Project Overview 🚀
 
-Cosmic.ts is a robust, TypeScript-first monorepo framework meticulously engineered to streamline the development and management of multiple Next.js applications within a single, cohesive repository.
+Cosmos.ts is a robust, TypeScript-first monorepo framework meticulously engineered to streamline the development and management of multiple Next.js applications within a single, cohesive repository.
 **It serves as a production-grade boilerplate, designed to be cloned and adapted to your specific project needs.** It's built for scalability and maintainability, making it ideal for complex web
 applications, micro-frontends, or projects requiring distinct, yet interconnected, services. By leveraging [TurboRepo](https://turborepo.org/) for efficient monorepo management and
-[Drizzle ORM](https://orm.drizzle.team/) with SQLite for type-safe database operations, Cosmic.ts provides a structured environment that promotes code reusability, simplifies dependency management,
+[Drizzle ORM](https://orm.drizzle.team/) with SQLite for type-safe database operations, Cosmos.ts provides a structured environment that promotes code reusability, simplifies dependency management,
 and enhances developer collaboration. The framework introduces a unique "cluster" concept, allowing developers to logically group and manage related projects, fostering a modular and organized
 codebase.
 
@@ -92,7 +92,7 @@ codebase.
 
 ## Project Structure 🏗️
 
-Cosmic.ts is meticulously structured as a monorepo, designed to facilitate efficient management of shared code, configurations, and multiple independent applications. The architecture is organized to
+Cosmos.ts is meticulously structured as a monorepo, designed to facilitate efficient management of shared code, configurations, and multiple independent applications. The architecture is organized to
 promote modularity, scalability, and clear separation of concerns.
 
 - `config/`: This directory is a dedicated workspace for shared configurations, acting as a central hub for consistent tooling across the entire monorepo.
@@ -162,22 +162,22 @@ promote modularity, scalability, and clear separation of concerns.
 
 ## Getting Started 🏁
 
-Follow these comprehensive steps to set up and run the Cosmic.ts project locally.
+Follow these comprehensive steps to set up and run the Cosmos.ts project locally.
 
 ### Prerequisites ✅
 
 - **Node.js (>=18):** Ensure you have a compatible Node.js version installed. You can use a version manager like `nvm` for easy switching.
-- **Yarn (v1.22.22 or later):** Cosmic.ts uses Yarn as its package manager, specifically for its workspace capabilities.
+- **Yarn (v1.22.22 or later):** Cosmos.ts uses Yarn as its package manager, specifically for its workspace capabilities.
 - **Docker (optional):** Recommended for consistent development and deployment environments, especially if you plan to containerize your applications.
 
 ### Installation 📦
 
-1.  **Clone the repository:** Begin by cloning the Cosmic.ts repository to your local machine:
+1.  **Clone the repository:** Begin by cloning the Cosmos.ts repository to your local machine:
     ```bash
-    git clone https://github.com/ShovitDutta/Cosmic.ts.git
-    cd Cosmic.ts
+    git clone https://github.com/ShovitDutta/Cosmos.ts.git
+    cd Cosmos.ts
     ```
-2.  **Install dependencies:** Cosmic.ts leverages Yarn workspaces to manage dependencies across all projects and shared configurations within the monorepo. Install all required packages by running:
+2.  **Install dependencies:** Cosmos.ts leverages Yarn workspaces to manage dependencies across all projects and shared configurations within the monorepo. Install all required packages by running:
     ```bash
     yarn install
     ```
@@ -252,7 +252,7 @@ This command tells TurboRepo to only run the `dev` script for the specified proj
 
 ## Database Setup 🗄️
 
-Cosmic.ts utilizes [Drizzle ORM](https://orm.drizzle.team/) for its database interactions, providing a type-safe and efficient way to manage your data. By default, it's configured to use SQLite, a
+Cosmos.ts utilizes [Drizzle ORM](https://orm.drizzle.team/) for its database interactions, providing a type-safe and efficient way to manage your data. By default, it's configured to use SQLite, a
 lightweight, file-based database, which is excellent for local development and testing.
 
 - **Schema Definition:** The database schema is defined in `source/__main__/drizzle/schema.ts`. This file uses Drizzle's schema definition language to describe your database tables, relationships, and
@@ -278,7 +278,7 @@ development.
 
 ## Authentication Flow 🔒
 
-Cosmic.ts integrates [NextAuth.js](https://next-auth.js.org/) (v5 beta) to handle authentication. This provides a flexible and secure way to manage user sessions and integrate with various
+Cosmos.ts integrates [NextAuth.js](https://next-auth.js.org/) (v5 beta) to handle authentication. This provides a flexible and secure way to manage user sessions and integrate with various
 authentication providers.
 
 - **Configuration:** NextAuth.js configuration is typically found in `source/__main__/auth.ts` and `source/__main__/middleware.ts`. `auth.ts` defines the authentication providers (Google, GitHub,
@@ -309,7 +309,7 @@ The framework employs a combination of [Zustand](https://zustand-demo.pmnd.rs/) 
 
 ## Configuration ⚙️
 
-Cosmic.ts places a strong emphasis on centralized and reusable configurations, located within the `config/` workspace. This approach ensures consistency, reduces duplication, and simplifies
+Cosmos.ts places a strong emphasis on centralized and reusable configurations, located within the `config/` workspace. This approach ensures consistency, reduces duplication, and simplifies
 maintenance across all projects in the monorepo. Each configuration package is consumed by individual projects via `@cosmos/` scoped imports.
 
 ### ESLint 🧹
@@ -411,7 +411,7 @@ These are specific scripts for the primary Next.js application, often called by 
 
 ## Runtime Configuration 🖥️
 
-Cosmic.ts is designed for flexible runtime configuration, primarily orchestrated through a conceptual `cosmos.yaml` file. This YAML structure defines how the main application (`BASE`) and various
+Cosmos.ts is designed for flexible runtime configuration, primarily orchestrated through a conceptual `cosmos.yaml` file. This YAML structure defines how the main application (`BASE`) and various
 clustered projects (`CLUSTERS`) are set up, including their network ports, execution commands, and crucial environment variables. This configuration is vital for managing complex deployments and
 ensuring proper inter-service communication.
 
@@ -501,7 +501,7 @@ CLUSTERS: # Configuration for the clustered projects. Each cluster can contain m
 
 ## Customization and Important Considerations ⚠️
 
-Cosmic.ts is provided as a robust boilerplate to kickstart your Next.js monorepo projects. While it's designed for flexibility and adaptation, certain core aspects are fundamental to its architecture
+Cosmos.ts is provided as a robust boilerplate to kickstart your Next.js monorepo projects. While it's designed for flexibility and adaptation, certain core aspects are fundamental to its architecture
 and should be handled with care during customization.
 
 - **Boilerplate Nature:** This repository is intended as a starting point. You are encouraged to clone it and modify it to suit your specific application requirements, features, and design.
@@ -522,16 +522,16 @@ and should be handled with care during customization.
   to your production environment.
 - **Project Naming:** When creating new projects or clusters, ensure unique and descriptive names to maintain clarity within the monorepo.
 
-By understanding and respecting these core architectural decisions, you can effectively customize Cosmic.ts to build scalable and maintainable applications while leveraging the benefits of its
+By understanding and respecting these core architectural decisions, you can effectively customize Cosmos.ts to build scalable and maintainable applications while leveraging the benefits of its
 structured framework.
 
 ---
 
 ## Contributing 🤝
 
-Contributions are highly encouraged! To contribute to Cosmic.ts, please follow these guidelines:
+Contributions are highly encouraged! To contribute to Cosmos.ts, please follow these guidelines:
 
-1.  **Fork the repository:** Start by forking the `Cosmic.ts` repository to your GitHub account.
+1.  **Fork the repository:** Start by forking the `Cosmos.ts` repository to your GitHub account.
 2.  **Clone your fork:** Clone your forked repository to your local machine.
 3.  **Create a new branch:** Create a new branch for your feature or bug fix.
 4.  **Make your changes:** Implement your changes, ensuring they adhere to the project's coding standards and best practices.
@@ -539,7 +539,7 @@ Contributions are highly encouraged! To contribute to Cosmic.ts, please follow t
 6.  **Format code:** Use `yarn format` to ensure your code is properly formatted.
 7.  **Conventional Commits:** Follow the [Conventional Commits specification](https://www.conventionalcommits.org/en/v1.0.0/) for your commit messages. This helps in generating changelogs and
     understanding the nature of changes. Use `yarn commit` to guide you through the process.
-8.  **Open a Pull Request:** Submit a pull request to the `main` branch of the original `Cosmic.ts` repository. Provide a clear and concise description of your changes.
+8.  **Open a Pull Request:** Submit a pull request to the `main` branch of the original `Cosmos.ts` repository. Provide a clear and concise description of your changes.
 
 ---
 
