@@ -17,7 +17,7 @@
         "build": "next build"
     },
     "dependencies": {
-        "@tanstack/react-query": "^5.77.2",
+        "@tanstack/react-query": "^5.79.0",
         "@auth/drizzle-adapter": "^1.9.1",
         "next-auth": "^5.0.0-beta.28",
         "better-sqlite3": "^11.10.0",
