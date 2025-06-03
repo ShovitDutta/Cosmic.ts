@@ -1,0 +1,80 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "name": "cosmos.ts",
+    "license": "UNLICENSED",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "packageManager": "yarn@1.22.22",
+    "workspaces": [
+        "config/*",
+        "source/__main__",
+        "source/clusters/**"
+    ],
+    "description": "A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/ShovitDutta/Cosmos.ts.git"
+    },
+    "homepage": "https://github.com/ShovitDutta/Cosmos.ts",
+    "scripts": {
+        "========================================: Docker": "========================================",
+        "docker:start": "bun run docker:stop && bun run docker:build && bun run docker:publish",
+        "docker:publish": "docker run --publish 8000:8000 --name cosmos.ts cosmos.ts",
+        "docker:build": "docker build --tag cosmos.ts -f dockerfile .",
+        "docker:prune": "docker system prune --all --force",
+        "docker:stop": "docker rmi --force cosmos.ts",
+        "========================================: System": "========================================",
+        "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+        "commit": "git add . && node scripts/commit.js",
+        "update": "node scripts/update.js",
+        "clean": "node scripts/clean.js",
+        "setup": "node scripts/setup.js",
+        "========================================: Turbo": "========================================",
+        "serve": "bun run build && bun run start",
+        "type-check": "turbo type-check",
+        "start": "turbo start",
+        "build": "turbo build",
+        "lint": "turbo lint",
+        "dev": "turbo dev"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.27.0",
+        "@next/eslint-plugin-next": "^15.3.0",
+        "@tailwindcss/cli": "^4.1.5",
+        "@tailwindcss/postcss": "^4.1.5",
+        "@types/node": "^22.15.3",
+        "@types/react": "^19.1.0",
+        "@types/react-dom": "^19.1.1",
+        "colors": "^1.4.0",
+        "dotenv": "^16.5.0",
+        "eslint": "^9.27.0",
+        "eslint-config-prettier": "^10.1.1",
+        "eslint-plugin-only-warn": "^1.1.0",
+        "eslint-plugin-react": "^7.37.4",
+        "eslint-plugin-react-hooks": "^5.2.0",
+        "eslint-plugin-turbo": "^2.5.0",
+        "globals": "^16.2.0",
+        "next": "^15.3.0",
+        "postcss": "^8.5.3",
+        "prettier": "^3.3.2",
+        "prettier-plugin-tailwindcss": "^0.6.12",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "tailwindcss": "^4.1.5",
+        "turbo": "^2.5.4",
+        "typescript": "^5.8.2",
+        "typescript-eslint": "^8.32.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "cz-conventional-changelog"
+        }
+    }
+}

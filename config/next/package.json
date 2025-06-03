@@ -1,0 +1,19 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "name": "@cosmos/next",
+    "license": "UNLICENSED",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "packageManager": "yarn@1.22.22",
+    "types": "./dist/index.d.ts",
+    "dependencies": {
+        "glob": "^11.0.2"
+    }
+}

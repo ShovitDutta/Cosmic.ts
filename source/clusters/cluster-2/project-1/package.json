@@ -1,0 +1,48 @@
+{
+    "type": "module",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "name": "cluster-2-project-1",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "packageManager": "yarn@1.22.22",
+    "scripts": {
+        "prebuild": "node drizzle/drizzle.js && drizzle-kit push --config=drizzle.config.ts && drizzle-kit generate --config=drizzle.config.ts",
+        "dev": "yarn prebuild && tsup && scripts/launch.js --dev",
+        "start": "tsup && scripts/launch.js --production",
+        "lint": "next lint --max-warnings 0",
+        "type-check": "tsc --noEmit",
+        "build": "next build"
+    },
+    "dependencies": {
+        "@auth/drizzle-adapter": "^1.9.1",
+        "@cosmos/next": "*",
+        "@tanstack/react-query": "^5.79.0",
+        "better-sqlite3": "^11.10.0",
+        "drizzle-kit": "^0.31.1",
+        "drizzle-orm": "^0.44.1",
+        "framer-motion": "^12.15.0",
+        "glob": "^11.0.2",
+        "next-auth": "^5.0.0-beta.28",
+        "pg": "^8.16.0",
+        "react-icons": "^5.5.0",
+        "socket.io": "^4.8.1",
+        "socket.io-client": "^4.8.1",
+        "tsup": "^8.5.0",
+        "zod": "^3.25.30",
+        "zustand": "^5.0.5"
+    },
+    "devDependencies": {
+        "@cosmos/eslint": "*",
+        "@cosmos/tailwindcss": "*",
+        "@cosmos/typescript": "*",
+        "@next/eslint-plugin-next": "*",
+        "@types/better-sqlite3": "^7.6.13",
+        "@types/pg": "^8.x.x"
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "name": "@cosmos/tailwindcss",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "packageManager": "yarn@1.22.22",
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": "./globals.css",
+        "./postcss": "./postcss.config.js",
+        "./styles.css": "./dist/index.css"
+    },
+    "scripts": {
+        "lint": "eslint src --max-warnings 0",
+        "build": "tailwindcss -i ./globals.css -o ./dist/index.css",
+        "dev": "tailwindcss -i ./globals.css -o ./dist/index.css --watch"
+    },
+    "dependencies": {
+        "glob": "^11.0.2"
+    }
+}
