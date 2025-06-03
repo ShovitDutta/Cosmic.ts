@@ -15,8 +15,7 @@
     "workspaces": [
         "config/*",
         "source/__main__",
-        "source/n-socket/**",
-        "source/y-socket/**"
+        "source/clusters/**"
     ],
     "description": "A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.",
     "repository": {
