@@ -39,8 +39,8 @@ const configPath = resolve(process.cwd(), "drizzle.config.ts");
 try {
     if (existsSync(configPath)) unlinkSync(configPath);
     writeFileSync(configPath, configContent.trim());
-    execSync(`npx drizzle-kit push --config=${configPath}`, { stdio: "inherit" });
-    execSync(`npx drizzle-kit generate --config=${configPath}`, { stdio: "inherit" });
+    execSync(`drizzle-kit push --config=${configPath}`, { stdio: "inherit" });
+    execSync(`drizzle-kit generate --config=${configPath}`, { stdio: "inherit" });
 } catch (error) {
     if (error instanceof Error) {
         console.error("An error occurred:", error.message);
