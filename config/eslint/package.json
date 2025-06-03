@@ -11,7 +11,7 @@
         "name": "Shovit Dutta",
         "email": "shovitdutta1@gmail.com"
     },
-    "packageManager": ">=bun@1.2.15",
+    "packageManager": "yarn@1.22.22",
     "exports": {
         "./base": "./base.js",
         "./next-js": "./next.js",
