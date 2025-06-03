@@ -25,7 +25,7 @@
     "homepage": "https://github.com/ShovitDutta/Cosmos.ts",
     "scripts": {
         "========================================: Docker": "========================================",
-        "docker:start": "bun run docker:stop && bun run docker:build && bun run docker:publish",
+        "docker:start": "yarn docker:stop && yarn docker:build && yarn docker:publish",
         "docker:publish": "docker run --publish 8000:8000 --name cosmos.ts cosmos.ts",
         "docker:build": "docker build --tag cosmos.ts -f dockerfile .",
         "docker:prune": "docker system prune --all --force",
@@ -37,7 +37,7 @@
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
-        "serve": "bun run build && bun run start",
+        "serve": "yarn build && yarn start",
         "type-check": "turbo type-check",
         "start": "turbo start",
         "build": "turbo build",
