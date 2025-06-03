@@ -13,7 +13,7 @@
     "packageManager": "yarn@1.22.22",
     "scripts": {
         "prebuild": "drizzle-kit push --config=drizzle.config.ts && drizzle-kit generate --config=drizzle.config.ts",
-        "dev": "bun run prebuild && tsup && scripts/launch.js --dev",
+        "dev": "yarn prebuild && tsup && scripts/launch.js --dev",
         "start": "tsup && scripts/launch.js --production",
         "postinstall": "node drizzle/drizzle.js",
         "lint": "next lint --max-warnings 0",

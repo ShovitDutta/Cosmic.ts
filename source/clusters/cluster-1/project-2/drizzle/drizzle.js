@@ -1,5 +1,5 @@
+import { writeFileSync, unlinkSync, existsSync } from "fs";
 import { execSync } from "child_process";
-import { writeFileSync } from "fs";
 import { config } from "dotenv";
 import { resolve } from "path";
 config();
@@ -23,9 +23,11 @@ if (!databaseUrl) {
     dialect = "sqlite";
     dbCredentials = { url: "./drizzle.db" };
 }
+
 const configContent = `
 import "dotenv/config";
 import { defineConfig } from "drizzle-kit";
+
 export default defineConfig({
     out: "./drizzle",
     schema: "./drizzle/schema.ts",
@@ -35,10 +37,15 @@ export default defineConfig({
 `;
 const configPath = resolve(process.cwd(), "drizzle.config.ts");
 try {
+    if (existsSync(configPath)) unlinkSync(configPath);
     writeFileSync(configPath, configContent.trim());
     execSync(`drizzle-kit push --config=${configPath}`, { stdio: "inherit" });
     execSync(`drizzle-kit generate --config=${configPath}`, { stdio: "inherit" });
-} catch (writeError) {
-    console.error("Failed to write drizzle.config.ts:", writeError);
+} catch (error) {
+    if (error instanceof Error) {
+        console.error("An error occurred:", error.message);
+    } else {
+        console.error("An unknown error occurred:", error);
+    }
     process.exit(1);
 }
