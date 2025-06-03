@@ -11,14 +11,14 @@
         "dist"
     ],
     "exports": {
-        ".": "./shared-styles.css",
+        ".": "./globals.css",
         "./postcss": "./postcss.config.js",
         "./styles.css": "./dist/index.css"
     },
     "scripts": {
         "lint": "eslint src --max-warnings 0",
-        "build": "tailwindcss -i ./shared-styles.css -o ./dist/index.css",
-        "dev": "tailwindcss -i ./shared-styles.css -o ./dist/index.css --watch"
+        "build": "tailwindcss -i ./globals.css -o ./dist/index.css",
+        "dev": "tailwindcss -i ./globals.css -o ./dist/index.css --watch"
     },
     "dependencies": {
         "glob": "^11.0.2"
