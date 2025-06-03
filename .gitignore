@@ -57,7 +57,7 @@ credentials.json
 migration/
 Dockerfile.orig
 docker-compose.yml.bak
-cosmos.yaml
+cosmos.dev.yaml
 .envrc
 .terraform/
 *.zip

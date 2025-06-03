@@ -59,7 +59,7 @@ docker-compose.*.yml
 .circleci/
 .gitlab-ci.yml
 Jenkinsfile
-cosmos.yaml
+cosmos.dev.yaml
 README.md
 CHANGELOG.md
 LICENSE.md

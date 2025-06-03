@@ -92,13 +92,15 @@ worker_processes auto;\n` +
 (async () => {
     const supervisordConfPath = path.join(process.cwd(), "docker", "supervisord.conf");
     const nginxConfPath = path.join(process.cwd(), "docker", "nginx.conf");
-    const repoYamlPath = path.join(process.cwd(), "cosmos.yaml");
+    const isProduction = process.env.NODE_ENV === "production";
+    const yamlFileName = isProduction ? "cosmos.prod.yaml" : "cosmos.dev.yaml";
+    const repoYamlPath = path.join(process.cwd(), yamlFileName);
     if (!fs.existsSync(repoYamlPath)) {
-        console.error(`${colors.red("[error]:")} The 'cosmos.yaml' file was not found at ${repoYamlPath}. Please read the 'README.md' and create it to proceed. `);
+        console.error(`${colors.red("[error]:")} The '${yamlFileName}' file was not found at ${repoYamlPath}. Please read the 'README.md' and create it to proceed. `);
         return;
     }
     try {
-        console.log(`${colors.blue("[cosmos.yaml]:")} Reading 'cosmos.yaml' from ${repoYamlPath} ...`);
+        console.log(`${colors.blue(`[${yamlFileName}]:`)} Reading '${yamlFileName}' from ${repoYamlPath} ...`);
         const fileContents = fs.readFileSync(repoYamlPath, "utf8");
         const config = yaml.load(fileContents);
         const nginxPort = config.HOST_PORT || 8000;

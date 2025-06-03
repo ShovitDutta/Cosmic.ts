@@ -1,0 +1,76 @@
+HOST_PORT: 8000
+BASE:
+  - NAME: main
+    PORT: 3000
+    COMMAND: /bin/sh -ec "bun run build && bun run start"
+    ENVIRONMENT_VARIABLES:
+      AUTH_TRUST_HOST: "true"
+      NEXT_PUBLIC_BASE_PORT: 3000
+      DATABASE_URL: ""
+      AUTH_URL: "http://localhost:8000"
+      AUTH_GOOGLE_SECRET: ""
+      AUTH_SECRET: ""
+      GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:3000/api/auth/callback/google"
+      AUTH_GOOGLE_ID: ""
+      CONNECT_PEERS: "http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3003,http://localhost:3004"
+CLUSTERS:
+  - NAME: cluster-1
+    PROJECTS:
+      - NAME: project-1
+        PORT: 3001
+        COMMAND: /bin/sh -ec "bun run build && bun run start"
+        ENVIRONMENT_VARIABLES:
+          AUTH_TRUST_HOST: "true"
+          NEXT_PUBLIC_BASE_PORT: 3001
+          DATABASE_URL: ""
+          NEXT_PUBLIC_BASE_PATH: "/cluster-1/project-1"
+          AUTH_URL: "http://localhost:8000/cluster-1/project-1"
+          AUTH_GOOGLE_SECRET: ""
+          AUTH_SECRET: ""
+          AUTH_GOOGLE_ID: ""
+          GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:3001/cluster-1/project-1/api/auth/callback/google"
+          CONNECT_PEERS: "http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3003,http://localhost:3004"
+      - NAME: project-2
+        PORT: 3002
+        COMMAND: /bin/sh -ec "bun run build && bun run start"
+        ENVIRONMENT_VARIABLES:
+          AUTH_TRUST_HOST: "true"
+          NEXT_PUBLIC_BASE_PORT: 3002
+          DATABASE_URL: ""
+          NEXT_PUBLIC_BASE_PATH: "/cluster-1/project-2"
+          AUTH_URL: "http://localhost:8000/cluster-1/project-2"
+          AUTH_GOOGLE_SECRET: ""
+          AUTH_SECRET: ""
+          AUTH_GOOGLE_ID: ""
+          GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:3002/cluster-1/project-2/api/auth/callback/google"
+          CONNECT_PEERS: "http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3003,http://localhost:3004"
+  - NAME: cluster-2
+    PROJECTS:
+      - NAME: project-1
+        PORT: 3003
+        COMMAND: /bin/sh -ec "bun run build && bun run start"
+        ENVIRONMENT_VARIABLES:
+          AUTH_TRUST_HOST: "true"
+          NEXT_PUBLIC_BASE_PORT: 3003
+          DATABASE_URL: ""
+          NEXT_PUBLIC_BASE_PATH: "/cluster-2/project-1"
+          AUTH_URL: "http://localhost:8000/cluster-2/project-1"
+          AUTH_GOOGLE_SECRET: ""
+          AUTH_SECRET: ""
+          AUTH_GOOGLE_ID: ""
+          GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:3003/cluster-2/project-1/api/auth/callback/google"
+          CONNECT_PEERS: "http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3003,http://localhost:3004"
+      - NAME: project-2
+        PORT: 3004
+        COMMAND: /bin/sh -ec "bun run build && bun run start"
+        ENVIRONMENT_VARIABLES:
+          AUTH_TRUST_HOST: "true"
+          NEXT_PUBLIC_BASE_PORT: 3004
+          DATABASE_URL: ""
+          NEXT_PUBLIC_BASE_PATH: "/cluster-2/project-2"
+          AUTH_URL: "http://localhost:8000/cluster-2/project-2"
+          AUTH_GOOGLE_SECRET: ""
+          AUTH_SECRET: ""
+          AUTH_GOOGLE_ID: ""
+          GOOGLE_AUTHORIZED_REDIRECT_URL: "http://localhost:3004/cluster-2/project-2/api/auth/callback/google"
+          CONNECT_PEERS: "http://localhost:3000,http://localhost:3001,http://localhost:3002,http://localhost:3003,http://localhost:3004"
