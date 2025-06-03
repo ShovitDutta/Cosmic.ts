@@ -9,10 +9,10 @@ export default function PublicPage() {
     const apiEndpoints = useMemo(
         () => [
             "http://localhost:3000/api/peer",
-            "http://localhost:4001/cluster-1/project-1/api/peer",
-            "http://localhost:4002/cluster-1/project-2/api/peer",
-            "http://localhost:5001/cluster-2/project-1/api/peer",
-            "http://localhost:5002/cluster-2/project-2/api/peer",
+            "http://localhost:3001/cluster-1/project-1/api/peer",
+            "http://localhost:3002/cluster-1/project-2/api/peer",
+            "http://localhost:3003/cluster-2/project-1/api/peer",
+            "http://localhost:3004/cluster-2/project-2/api/peer",
         ],
         [],
     );
