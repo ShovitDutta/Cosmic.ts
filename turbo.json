@@ -1,7 +1,7 @@
 {
     "ui": "tui",
+    "globalEnv": ["NODE_ENV"],
     "remoteCache": { "signature": true },
-    "globalEnv": ["NODE_ENV", "CI", "VERCEL_ENV"],
     "$schema": "https://turborepo.com/schema.json",
     "globalDependencies": ["package.json", "pnpm-lock.yaml", "yarn.lock", "package-lock.json"],
     "tasks": {
