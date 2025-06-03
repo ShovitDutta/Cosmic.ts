@@ -70,3 +70,4 @@ cosmos.yaml
 *.svg.bak
 drizzle/meta/
 *.sql
+drizzle.config.ts
