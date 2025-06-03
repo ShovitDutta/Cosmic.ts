@@ -37,13 +37,11 @@
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
-        "check-types": "turbo --color run check-types",
-        "build": "turbo --color run build",
-        "start": "turbo --color run start",
-        "lint": "turbo --color run lint",
-        "dev": "turbo --color run dev",
-        "cosmos:dev": "node cosmos.js dev",
-        "cosmos:build": "node cosmos.js build"
+        "check-types": "node cosmos.js check-types",
+        "start": "node cosmos.js start",
+        "build": "node cosmos.js build",
+        "lint": "node cosmos.js lint",
+        "dev": "node cosmos.js dev"
     },
     "devDependencies": {
         "@eslint/js": "^9.27.0",
