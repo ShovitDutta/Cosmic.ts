@@ -13,8 +13,8 @@
     "packageManager": "yarn@1.22.22",
     "scripts": {
         "prebuild": "node drizzle/drizzle.js && drizzle-kit push --config=drizzle.config.ts && drizzle-kit generate --config=drizzle.config.ts",
-        "dev": "yarn prebuild && tsup && scripts/launch.js --dev",
-        "start": "tsup && scripts/launch.js --production",
+        "dev": "yarn prebuild && node scripts/launch.js --dev",
+        "start": "node scripts/launch.js --production",
         "lint": "next lint --max-warnings 0",
         "type-check": "tsc --noEmit",
         "build": "next build"
@@ -33,7 +33,6 @@
         "react-icons": "^5.5.0",
         "socket.io": "^4.8.1",
         "socket.io-client": "^4.8.1",
-        "tsup": "^8.5.0",
         "zod": "^3.25.30",
         "zustand": "^5.0.5"
     },
