@@ -1,0 +1,15 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "name": "@cosmos/eslint",
+    "exports": {
+        "./base": "./base.js",
+        "./next-js": "./next.js",
+        "./react-internal": "./react-internal.js"
+    },
+    "dependencies": {
+        "glob": "^11.0.2"
+    }
+}
