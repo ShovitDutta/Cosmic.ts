@@ -1,8 +1,8 @@
 import { defineConfig } from "tsup";
 export default defineConfig({
-    entry: ["launch.ts"],
+    entry: ["scripts/launch.ts"],
+    outDir: "scripts",
     splitting: false,
     format: ["cjs"],
     clean: false,
-    outDir: ".",
 });
