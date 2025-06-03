@@ -24,16 +24,24 @@ export default function SocketPage() {
     const [peerResults, setPeerResults] = useState<SocketPeerResult[]>([]);
     const [loading, setLoading] = useState<boolean>(true);
     const [globalStatus, setGlobalStatus] = useState<string>("Connecting...");
-    const socketEndpoints = useMemo(
-        () => [
-            { url: "http://localhost:3000", port: 3000 },
-            { url: "http://localhost:3001", port: 3001 },
-            { url: "http://localhost:3002", port: 3002 },
-            { url: "http://localhost:3003", port: 3003 },
-            { url: "http://localhost:3004", port: 3004 },
-        ],
-        [],
-    );
+    const socketEndpoints = useMemo(() => {
+        const peersString = process.env.NEXT_PUBLIC_CONNECT_PEERS;
+        if (!peersString) {
+            return [];
+        }
+        return peersString
+            .split(",")
+            .map((peerUrl) => {
+                try {
+                    const url = new URL(peerUrl.trim());
+                    return { url: url.origin, port: parseInt(url.port) || (url.protocol === "https:" ? 443 : 80) };
+                } catch (error) {
+                    console.error(`Invalid peer URL in NEXT_PUBLIC_CONNECT_PEERS: ${peerUrl}`, error);
+                    return null;
+                }
+            })
+            .filter(Boolean) as { url: string; port: number }[];
+    }, []);
     useEffect(() => {
         const clients: Socket[] = [];
         const results: SocketPeerResult[] = [];

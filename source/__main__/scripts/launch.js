@@ -44,7 +44,6 @@ app.prepare().then(() => {
             console.log(`Received message from ${socket.id}:`, data);
         });
         socket.on("peer-check", (data, callback) => {
-            console.log(`Peer check request from ${socket.id}:`, data);
             const response = { port: port, message: `Socket peer ${port} > Connection Verified!`, timestamp: new Date().toISOString(), socketId: socket.id };
             if (callback && typeof callback === "function") callback(response);
             socket.broadcast.emit("peer-check-response", response);

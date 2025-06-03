@@ -36,7 +36,7 @@ function getNextVersion() {
 app.prepare().then(() => {
     const httpServer = createServer(handler);
     const io = new Server(httpServer, {
-        cors: { origin: ["http://localhost:3000", "http://localhost:3001", "http://localhost:3002", "http://localhost:3003", "http://localhost:3004"], methods: ["GET", "POST"] },
+        cors: { origin: process.env.NEXT_PUBLIC_CONNECT_PEERS ? process.env.NEXT_PUBLIC_CONNECT_PEERS.split(",") : [], methods: ["GET", "POST"] },
     });
     io.on("connection", (socket) => {
         console.log(colors.green(`Socket Connected: [ID: ${socket.id}, URL: ${socket.handshake.url}, Time: ${socket.handshake.time}, Host: ${socket.handshake.headers.host}]`));
@@ -44,7 +44,6 @@ app.prepare().then(() => {
             console.log(`Received message from ${socket.id}:`, data);
         });
         socket.on("peer-check", (data, callback) => {
-            console.log(`Peer check request from ${socket.id}:`, data);
             const response = { port: port, message: `Socket peer ${port} > Connection Verified!`, timestamp: new Date().toISOString(), socketId: socket.id };
             if (callback && typeof callback === "function") callback(response);
             socket.broadcast.emit("peer-check-response", response);
