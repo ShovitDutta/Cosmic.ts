@@ -6,7 +6,11 @@
     "engines": {
         "node": ">=18"
     },
-    "packageManager": "yarn@1.22.22",
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "packageManager": ">=bun@1.2.15",
     "scripts": {
         "drizzle-things": "drizzle-kit push --config=drizzle.config.ts && drizzle-kit generate --config=drizzle.config.ts && drizzle-kit migrate --config=drizzle.config.ts",
         "prebuild": "drizzle-kit push --config=drizzle.config.ts && drizzle-kit generate --config=drizzle.config.ts",

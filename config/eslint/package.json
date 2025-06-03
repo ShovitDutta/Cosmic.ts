@@ -4,6 +4,14 @@
     "version": "0.0.0",
     "license": "UNLICENSED",
     "name": "@cosmos/eslint",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "packageManager": ">=bun@1.2.15",
     "exports": {
         "./base": "./base.js",
         "./next-js": "./next.js",

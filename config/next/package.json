@@ -4,6 +4,14 @@
     "version": "0.0.0",
     "name": "@cosmos/next",
     "license": "UNLICENSED",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "packageManager": ">=bun@1.2.15",
     "types": "./dist/index.d.ts",
     "dependencies": {
         "glob": "^11.0.2"

@@ -4,6 +4,14 @@
     "version": "0.0.0",
     "license": "UNLICENSED",
     "name": "@cosmos/typescript",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "packageManager": ">=bun@1.2.15",
     "publishConfig": {
         "access": "public"
     },
