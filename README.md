@@ -1,10 +1,16 @@
 # Cosmos.ts ✨
 
 <p align="left">
-  <img src="logo.png" alt="Cosmos.ts Logo" width="200"/>
+  <img src="images/cosmos.png" alt="Cosmos.ts Logo" width="200"/>
 </p>
 
 A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.
+
+<p align="left">
+  <img src="images/view-1.png" alt="View 1" width="200" height="150" style="display:inline-block; margin-right: 10px;">
+  <img src="images/view-2.png" alt="View 2" width="200" height="150" style="display:inline-block; margin-right: 10px;">
+  <img src="images/view-3.png" alt="View 3" width="200" height="150" style="display:inline-block;">
+</p>
 
 ## Table of Contents 📚
 
@@ -12,19 +18,12 @@ A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Mana
 - [Features](#features) 💡
 - [Technologies Used](#technologies-used) 🛠️
 - [Project Structure](#project-structure) 🏗️
-- [Getting Started](#getting-started) 🏁
-    - [Prerequisites](#prerequisites) ✅
-    - [Installation](#installation) 📦
-    - [Environment Variables](#environment-variables) 🔑
-    - [Running the Application](#running-the-application) ▶️
+- [Getting Started](#getting-started) 🏁     - [Prerequisites](#prerequisites) ✅     - [Installation](#installation) 📦     - [Environment Variables](#environment-variables) 🔑     -
+  [Running the Application](#running-the-application) ▶️
 - [Database Setup](#database-setup) 🗄️
 - [Authentication Flow](#authentication-flow) 🔒
 - [Data Management](#data-management) 📊
-- [Configuration](#configuration) ⚙️
-    - [ESLint](#eslint) 🧹
-    - [Next.js](#nextjs) 🌐
-    - [Tailwind CSS](#tailwind-css) 🎨
-    - [TypeScript](#typescript) 📝
+- [Configuration](#configuration) ⚙️     - [ESLint](#eslint) 🧹     - [Next.js](#nextjs) 🌐     - [Tailwind CSS](#tailwind-css) 🎨     - [TypeScript](#typescript) 📝
 - [Scripts](#scripts) 📜
 - [Docker](#docker) 🐳
 - [Runtime Configuration](#runtime-configuration) 🖥️
