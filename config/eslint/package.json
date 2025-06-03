@@ -8,5 +8,8 @@
         "./base": "./base.js",
         "./next-js": "./next.js",
         "./react-internal": "./react-internal.js"
+    },
+    "dependencies": {
+        "glob": "^11.0.2"
     }
 }
