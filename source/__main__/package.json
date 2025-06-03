@@ -13,7 +13,7 @@
         "dev": "yarn run prebuild && node scripts/dev.js",
         "lint": "next lint --max-warnings 0",
         "start": "node scripts/start.js",
-        "check-types": "tsc --noEmit",
+        "type-check": "tsc --noEmit",
         "build": "next build"
     },
     "dependencies": {
