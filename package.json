@@ -17,7 +17,6 @@
         "source/__main__",
         "source/clusters/**"
     ],
-
     "description": "A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.",
     "repository": {
         "type": "git",
@@ -38,6 +37,7 @@
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
+        "serve": "bun run build && bun run start",
         "type-check": "turbo type-check",
         "start": "turbo start",
         "build": "turbo build",
