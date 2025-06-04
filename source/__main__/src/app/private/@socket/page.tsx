@@ -144,12 +144,20 @@ export default function ParallelSocketPage() {
             </div>
             <div className="mt-4 flex items-center justify-between">
                 <div className="text-sm text-violet-300">
-                    Connected: {connectedCount}/{totalCount}
+                    <div className="mt-4 flex items-center gap-3 text-purple-300 justify-start">
+                        <div className="flex gap-1">
+                            <div className="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></div> <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse delay-100"></div>
+                            <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse delay-200"></div>
+                        </div>
+                        <span className="text-sm font-medium tracking-wide">
+                            Sockets Connected: {connectedCount}/{totalCount}
+                        </span>
+                    </div>
                 </div>
                 <button
                     onClick={handleTestMessage}
                     disabled={connectedCount === 0}
-                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${connectedCount > 0 ? "bg-purple-600 hover:bg-purple-700 text-white shadow-md" : "bg-gray-700 text-gray-400 cursor-not-allowed"}`}
+                    className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${connectedCount > 0 ? "bg-purple-600/20 hover:bg-purple-700/40 text-white shadow-md" : "bg-gray-700 text-gray-400 cursor-not-allowed"}`}
                 >
                     Send Test Message
                 </button>

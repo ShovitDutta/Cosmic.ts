@@ -92,13 +92,16 @@ export default function ParallelPeerPage() {
                     ) : null}
                 </motion.div>
             </div>
-            <div className="mt-4 flex items-center gap-3 text-cyan-300 justify-start">
+            <motion.div className="mt-8 flex items-center gap-4 text-gray-400 justify-start" animate={{ opacity: [0.4, 1, 0.4], y: [0, -5, 0] }} transition={{ duration: 3, repeat: Infinity }}>
                 <div className="flex gap-1">
-                    <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div> <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse delay-100"></div>
+                    <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></div>
+                    <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse delay-100"></div>
                     <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse delay-200"></div>
                 </div>
-                <span className="text-sm font-medium tracking-wide">Multi-Endpoint HTTP Checks</span>
-            </div>
+                <span className="text-sm font-medium tracking-wide">Real-Time HTTP Polling</span>
+                <div className="h-4 w-px bg-gray-600"></div>
+                <span className="text-xs font-mono text-gray-500">Multi-Endpoint Peer Connection</span>
+            </motion.div>
         </div>
     );
 }
