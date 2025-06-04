@@ -11,7 +11,7 @@
         "name": "Shovit Dutta",
         "email": "shovitdutta1@gmail.com"
     },
-    "packageManager": "yarn@1.22.22",
+    "packageManager": "yarn@4.9.2",
     "workspaces": [
         "config/*",
         "source/__main__",
@@ -33,6 +33,7 @@
         "========================================: System": "========================================",
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "commit": "git add . && node scripts/commit.js",
+        "prepare": "node scripts/prepare.js",
         "update": "node scripts/update.js",
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",

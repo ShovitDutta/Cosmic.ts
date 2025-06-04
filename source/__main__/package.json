@@ -10,7 +10,7 @@
         "name": "Shovit Dutta",
         "email": "shovitdutta1@gmail.com"
     },
-    "packageManager": "yarn@1.22.22",
+    "packageManager": "yarn@4.9.2",
     "scripts": {
         "prebuild": "node drizzle/drizzle.js && drizzle-kit push --config=drizzle.config.ts && drizzle-kit generate --config=drizzle.config.ts",
         "dev": "yarn prebuild && node scripts/launch.js --dev",
