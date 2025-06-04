@@ -143,16 +143,17 @@ export default function ParallelSocketPage() {
                 </motion.div>
             </div>
             <div className="mt-4 flex items-center justify-between">
-                <div className="text-sm text-violet-300">
-                    <div className="mt-4 flex items-center gap-3 text-purple-300 justify-start">
-                        <div className="flex gap-1">
-                            <div className="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></div> <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse delay-100"></div>
-                            <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse delay-200"></div>
-                        </div>
-                        <span className="text-sm font-medium tracking-wide">
-                            Sockets Connected: {connectedCount}/{totalCount}
-                        </span>
+                <div className="mt-4 flex items-center gap-3 text-purple-300 justify-start">
+                    <div className="flex gap-1">
+                        <div className="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></div> <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse delay-100"></div>
+                        <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse delay-200"></div>
                     </div>
+                    <span className="text-xs font-mono text-gray-500">Web Sockets Connection</span>
+                    <div className="h-4 w-px bg-gray-600"></div>
+                    <span className="text-sm font-medium tracking-wide">
+                        Sockets Connected: {connectedCount}/{totalCount}
+                    </span>
+                    <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></div>
                 </div>
                 <button
                     onClick={handleTestMessage}

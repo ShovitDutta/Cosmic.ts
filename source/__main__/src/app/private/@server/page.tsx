@@ -32,7 +32,7 @@ export default async function ParallelServerPage() {
             </div>
             <div className="flex-1 flex flex-col items-end justify-center relative">
                 <div className="absolute inset-0 bg-gradient-to-br from-violet-900/30 via-purple-900/20 to-indigo-900/30 rounded-3xl blur-3xl"></div>
-                <div className="relative group perspective-1000">
+                <div className="relative group">
                     <div className="absolute -inset-6 bg-gradient-to-r from-violet-500 via-purple-500 to-indigo-600 rounded-3xl blur-2xl opacity-20 group-hover:opacity-40 transition-all duration-700 animate-pulse"></div>
                     <div
                         className="relative bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-800/95 backdrop-blur-3xl rounded-[1.5rem] p-16 border border-violet-400/40 shadow-2xl shadow-violet-500/30"
@@ -88,7 +88,6 @@ export default async function ParallelServerPage() {
                     </div>
                     <span className="text-xs font-mono text-gray-500">Server-side Computation</span>
                     <div className="h-4 w-px bg-gray-600"></div>
-
                     <span className="text-sm font-medium tracking-wide">Pre-rendered HTML</span>
                     <div className="w-2 h-2 rounded-full bg-violet-400 animate-pulse"></div>
                 </div>

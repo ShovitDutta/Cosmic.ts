@@ -27,7 +27,7 @@ export default async function PrivateLayout({ children, client, server, peer, so
                                     <p className="text-cyan-200/70 text-sm font-medium">Interactive UI • HTTP Polling</p>
                                 </div>
                             </div>
-                            <div className="group transition-all duration-500 hover:scale-[1.02] hover:rotate-1">{client}</div>
+                            <div className="group">{client}</div>
                             {/* Peer Section */}
                             <div className="mt-28 flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-cyan-900/20 to-blue-900/20 border border-cyan-500/20 backdrop-blur-xl">
                                 <div className="flex items-center gap-2">
@@ -39,7 +39,7 @@ export default async function PrivateLayout({ children, client, server, peer, so
                                     <p className="text-cyan-200/70 text-sm font-medium">API Connectivity • Multi-Endpoint</p>
                                 </div>
                             </div>
-                            <div className="group transition-all duration-500 hover:scale-[1.02] hover:rotate-1">{peer}</div>
+                            <div className="group">{peer}</div>
                         </div>
                         {/* Server Column */}
                         <div className="space-y-6">
@@ -53,7 +53,7 @@ export default async function PrivateLayout({ children, client, server, peer, so
                                     <div className="w-3 h-3 rounded-full bg-violet-400 shadow-[0_0_12px_#8b5cf6] animate-pulse"></div>
                                 </div>
                             </div>
-                            <div className="group transition-all duration-500 hover:scale-[1.02] hover:-rotate-1">{server}</div>
+                            <div className="group">{server}</div>
                             {/* Socket Section */}
                             <div className="mt-28 flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-violet-900/20 to-purple-900/20 border border-violet-500/20 backdrop-blur-xl justify-end">
                                 <div>
@@ -65,7 +65,7 @@ export default async function PrivateLayout({ children, client, server, peer, so
                                     <div className="w-3 h-3 rounded-full bg-violet-400 shadow-[0_0_12px_#8b5cf6] animate-pulse"></div>
                                 </div>
                             </div>
-                            <div className="group transition-all duration-500 hover:scale-[1.02] hover:-rotate-1">{socket}</div>
+                            <div className="group">{socket}</div>
                         </div>
                     </div>
                 </div>

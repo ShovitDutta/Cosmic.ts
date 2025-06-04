@@ -52,7 +52,7 @@ export default function ParallelClientPage() {
                     <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-blue-500/15 rounded-full blur-3xl animate-float-delayed"></div>
                     <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-conic from-cyan-500/10 via-blue-500/10 to-teal-500/10 rounded-full blur-3xl animate-spin-slow"></div>
                 </div>
-                <motion.div className="relative group perspective-1000">
+                <motion.div className="relative group">
                     <div className="absolute -inset-8 bg-gradient-to-r from-cyan-400 via-blue-500 to-teal-500 rounded-[2rem] blur-2xl opacity-20 group-hover:opacity-50 transition-all duration-1000 animate-pulse"></div>
                     <motion.div
                         className="relative bg-gradient-to-br from-gray-900/95 via-black/95 to-gray-800/95 backdrop-blur-3xl rounded-[1.5rem] p-16 border border-cyan-400/40 shadow-2xl shadow-cyan-500/30"

@@ -32,7 +32,7 @@ export default async function PrivatePage() {
                     </div>
                     <div className="relative group">
                         <div className="absolute -inset-2 bg-gradient-to-r from-red-500 to-pink-500 rounded-xl blur opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
-                        <div className="relative transform transition-all duration-200 hover:scale-105 active:scale-95">
+                        <div className="relative">
                             <SignOut />
                         </div>
                     </div>
