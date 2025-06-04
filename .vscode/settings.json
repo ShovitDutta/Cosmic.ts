@@ -7,6 +7,7 @@
         "**/venv": true,
         "**/.svn": true,
         "**/.git": true,
+        "**/.yarn": true,
         "**/.expo": true,
         "**/.next": true,
         "**/.venv": true,
