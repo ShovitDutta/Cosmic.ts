@@ -55,10 +55,8 @@ credentials.json
 *.sqlite
 *.sqlite3
 migration/
-docker/
 Dockerfile.orig
 docker-compose.yml.bak
-cosmos.yaml
 .envrc
 .terraform/
 *.zip

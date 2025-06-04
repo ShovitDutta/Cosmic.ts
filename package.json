@@ -45,11 +45,12 @@
         "dev": "turbo dev"
     },
     "devDependencies": {
-        "glob": "^11.0.2",
         "colors": "^1.4.0",
+        "glob": "^11.0.2",
+        "globals": "^16.2.0",
         "prettier": "^3.3.2",
         "turbo": "^2.5.4",
-        "globals": "^16.2.0"
+        "typescript": "^5.8.3"
     },
     "config": {
         "commitizen": {

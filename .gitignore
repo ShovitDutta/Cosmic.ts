@@ -68,3 +68,4 @@ docker-compose.yml.bak
 *.svg.bak
 drizzle/meta/
 *.sql
+drizzle.config.ts
