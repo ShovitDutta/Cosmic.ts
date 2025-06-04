@@ -30,7 +30,6 @@ export default async function PrivateLayout({ children, client, server, peer, so
                                 </div>
                             </div>
                             <div className="group transition-all duration-500 hover:scale-[1.02] hover:rotate-1">{client}</div>
-
                             {/* Peer Section */}
                             <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-cyan-900/20 to-blue-900/20 border border-cyan-500/20 backdrop-blur-xl">
                                 <div className="flex items-center gap-2">
@@ -44,7 +43,6 @@ export default async function PrivateLayout({ children, client, server, peer, so
                             </div>
                             <div className="group transition-all duration-500 hover:scale-[1.02] hover:rotate-1">{peer}</div>
                         </div>
-
                         {/* Server Column */}
                         <div className="space-y-6">
                             <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-violet-900/20 to-purple-900/20 border border-violet-500/20 backdrop-blur-xl justify-end">
@@ -58,7 +56,6 @@ export default async function PrivateLayout({ children, client, server, peer, so
                                 </div>
                             </div>
                             <div className="group transition-all duration-500 hover:scale-[1.02] hover:-rotate-1">{server}</div>
-
                             {/* Socket Section */}
                             <div className="flex items-center gap-4 p-4 rounded-2xl bg-gradient-to-r from-violet-900/20 to-purple-900/20 border border-violet-500/20 backdrop-blur-xl justify-end">
                                 <div>
