@@ -18,5 +18,13 @@
         "lint": "next lint --max-warnings 0",
         "type-check": "tsc --noEmit",
         "build": "next build"
+    },
+    "dependencies": {
+        "@cosmos/next": "*",
+        "@cosmos/tailwindcss": "*"
+    },
+    "devDependencies": {
+        "@cosmos/eslint": "*",
+        "@cosmos/typescript": "*"
     }
 }
