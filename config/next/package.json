@@ -14,22 +14,22 @@
     "packageManager": "yarn@1.22.22",
     "types": "./dist/index.d.ts",
     "dependencies": {
-        "dotenv": "^16.5.0",
         "@auth/drizzle-adapter": "^1.9.1",
         "@tanstack/react-query": "^5.79.0",
         "better-sqlite3": "^11.10.0",
+        "dotenv": "^16.5.0",
         "drizzle-kit": "^0.31.1",
         "drizzle-orm": "^0.44.1",
-        "pg": "^8.16.0",
         "framer-motion": "^12.15.0",
+        "next": "^15.3.0",
         "next-auth": "^5.0.0-beta.28",
+        "pg": "^8.16.0",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
         "react-icons": "^5.5.0",
         "socket.io": "^4.8.1",
         "socket.io-client": "^4.8.1",
         "zod": "^3.25.50",
-        "next": "^15.3.0",
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0",
         "zustand": "^5.0.5"
     }
 }
