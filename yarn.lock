@@ -59,15 +59,15 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cosmos/eslint@workspace:config/eslint"
   dependencies:
-    "@eslint/js": "npm:^9.27.0"
-    "@next/eslint-plugin-next": "npm:^15.3.0"
-    eslint: "npm:^9.27.0"
-    eslint-config-prettier: "npm:^10.1.1"
+    "@eslint/js": "npm:^9.28.0"
+    "@next/eslint-plugin-next": "npm:^15.3.3"
+    eslint: "npm:^9.28.0"
+    eslint-config-prettier: "npm:^10.1.5"
     eslint-plugin-only-warn: "npm:^1.1.0"
-    eslint-plugin-react: "npm:^7.37.4"
+    eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^5.2.0"
-    eslint-plugin-turbo: "npm:^2.5.0"
-    typescript-eslint: "npm:^8.32.0"
+    eslint-plugin-turbo: "npm:^2.5.4"
+    typescript-eslint: "npm:^8.33.1"
   languageName: unknown
   linkType: soft
 
@@ -76,13 +76,13 @@ __metadata:
   resolution: "@cosmos/next@workspace:config/next"
   dependencies:
     "@auth/drizzle-adapter": "npm:^1.9.1"
-    "@tanstack/react-query": "npm:^5.79.0"
+    "@tanstack/react-query": "npm:^5.80.2"
     better-sqlite3: "npm:^11.10.0"
     dotenv: "npm:^16.5.0"
     drizzle-kit: "npm:^0.31.1"
     drizzle-orm: "npm:^0.44.1"
-    framer-motion: "npm:^12.15.0"
-    next: "npm:^15.3.0"
+    framer-motion: "npm:^12.16.0"
+    next: "npm:^15.3.3"
     next-auth: "npm:^5.0.0-beta.28"
     pg: "npm:^8.16.0"
     react: "npm:^19.1.0"
@@ -90,7 +90,7 @@ __metadata:
     react-icons: "npm:^5.5.0"
     socket.io: "npm:^4.8.1"
     socket.io-client: "npm:^4.8.1"
-    zod: "npm:^3.25.50"
+    zod: "npm:^3.25.51"
     zustand: "npm:^5.0.5"
   languageName: unknown
   linkType: soft
@@ -99,11 +99,11 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cosmos/tailwindcss@workspace:config/tailwindcss"
   dependencies:
-    "@tailwindcss/cli": "npm:^4.1.5"
-    "@tailwindcss/postcss": "npm:^4.1.5"
-    postcss: "npm:^8.5.3"
+    "@tailwindcss/cli": "npm:^4.1.8"
+    "@tailwindcss/postcss": "npm:^4.1.8"
+    postcss: "npm:^8.5.4"
     prettier-plugin-tailwindcss: "npm:^0.6.12"
-    tailwindcss: "npm:^4.1.5"
+    tailwindcss: "npm:^4.1.8"
   languageName: unknown
   linkType: soft
 
@@ -112,10 +112,10 @@ __metadata:
   resolution: "@cosmos/typescript@workspace:config/typescript"
   dependencies:
     "@types/better-sqlite3": "npm:^7.6.13"
-    "@types/node": "npm:^22.15.3"
+    "@types/node": "npm:^22.15.29"
     "@types/pg": "npm:^8.15.4"
-    "@types/react": "npm:^19.1.0"
-    "@types/react-dom": "npm:^19.1.1"
+    "@types/react": "npm:^19.1.6"
+    "@types/react-dom": "npm:^19.1.5"
   languageName: unknown
   linkType: soft
 
@@ -565,7 +565,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@eslint/js@npm:9.28.0, @eslint/js@npm:^9.27.0":
+"@eslint/js@npm:9.28.0, @eslint/js@npm:^9.28.0":
   version: 9.28.0
   resolution: "@eslint/js@npm:9.28.0"
   checksum: 10c0/5a6759542490dd9f778993edfbc8d2f55168fd0f7336ceed20fe3870c65499d72fc0bca8d1ae00ea246b0923ea4cba2e0758a8a5507a3506ddcf41c92282abb8
@@ -899,7 +899,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@next/eslint-plugin-next@npm:^15.3.0":
+"@next/eslint-plugin-next@npm:^15.3.3":
   version: 15.3.3
   resolution: "@next/eslint-plugin-next@npm:15.3.3"
   dependencies:
@@ -1194,7 +1194,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/cli@npm:^4.1.5":
+"@tailwindcss/cli@npm:^4.1.8":
   version: 4.1.8
   resolution: "@tailwindcss/cli@npm:4.1.8"
   dependencies:
@@ -1364,7 +1364,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tailwindcss/postcss@npm:^4.1.5":
+"@tailwindcss/postcss@npm:^4.1.8":
   version: 4.1.8
   resolution: "@tailwindcss/postcss@npm:4.1.8"
   dependencies:
@@ -1384,7 +1384,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@tanstack/react-query@npm:^5.79.0":
+"@tanstack/react-query@npm:^5.80.2":
   version: 5.80.2
   resolution: "@tanstack/react-query@npm:5.80.2"
   dependencies:
@@ -1436,7 +1436,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^22.15.3":
+"@types/node@npm:*, @types/node@npm:>=10.0.0, @types/node@npm:^22.15.29":
   version: 22.15.29
   resolution: "@types/node@npm:22.15.29"
   dependencies:
@@ -1456,7 +1456,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react-dom@npm:^19.1.1":
+"@types/react-dom@npm:^19.1.5":
   version: 19.1.5
   resolution: "@types/react-dom@npm:19.1.5"
   peerDependencies:
@@ -1465,7 +1465,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/react@npm:^19.1.0":
+"@types/react@npm:^19.1.6":
   version: 19.1.6
   resolution: "@types/react@npm:19.1.6"
   dependencies:
@@ -2130,7 +2130,7 @@ __metadata:
     colors: "npm:^1.4.0"
     glob: "npm:^11.0.2"
     globals: "npm:^16.2.0"
-    prettier: "npm:^3.3.2"
+    prettier: "npm:^3.5.3"
     turbo: "npm:^2.5.4"
     typescript: "npm:^5.8.3"
   languageName: unknown
@@ -2837,7 +2837,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^10.1.1":
+"eslint-config-prettier@npm:^10.1.5":
   version: 10.1.5
   resolution: "eslint-config-prettier@npm:10.1.5"
   peerDependencies:
@@ -2864,7 +2864,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react@npm:^7.37.4":
+"eslint-plugin-react@npm:^7.37.5":
   version: 7.37.5
   resolution: "eslint-plugin-react@npm:7.37.5"
   dependencies:
@@ -2892,7 +2892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-turbo@npm:^2.5.0":
+"eslint-plugin-turbo@npm:^2.5.4":
   version: 2.5.4
   resolution: "eslint-plugin-turbo@npm:2.5.4"
   dependencies:
@@ -2928,7 +2928,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.27.0":
+"eslint@npm:^9.28.0":
   version: 9.28.0
   resolution: "eslint@npm:9.28.0"
   dependencies:
@@ -3174,7 +3174,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"framer-motion@npm:^12.15.0":
+"framer-motion@npm:^12.16.0":
   version: 12.16.0
   resolution: "framer-motion@npm:12.16.0"
   dependencies:
@@ -4404,7 +4404,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"next@npm:^15.3.0":
+"next@npm:^15.3.3":
   version: 15.3.3
   resolution: "next@npm:15.3.3"
   dependencies:
@@ -4828,7 +4828,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss@npm:^8.4.41, postcss@npm:^8.5.3":
+"postcss@npm:^8.4.41, postcss@npm:^8.5.4":
   version: 8.5.4
   resolution: "postcss@npm:8.5.4"
   dependencies:
@@ -4972,7 +4972,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"prettier@npm:^3.3.2":
+"prettier@npm:^3.5.3":
   version: 3.5.3
   resolution: "prettier@npm:3.5.3"
   bin:
@@ -5771,7 +5771,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"tailwindcss@npm:4.1.8, tailwindcss@npm:^4.1.5":
+"tailwindcss@npm:4.1.8, tailwindcss@npm:^4.1.8":
   version: 4.1.8
   resolution: "tailwindcss@npm:4.1.8"
   checksum: 10c0/a566d049ee313f9c1638fd2a5fe95ae7e40bb35b58e92ed8d7c51880e71dff2a423dd430ff97444e2496c9c77b3f44ad4df48110b11484133019c1a8520d7bce
@@ -6001,7 +6001,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-eslint@npm:^8.32.0":
+"typescript-eslint@npm:^8.33.1":
   version: 8.33.1
   resolution: "typescript-eslint@npm:8.33.1"
   dependencies:
@@ -6264,10 +6264,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"zod@npm:^3.25.50":
-  version: 3.25.50
-  resolution: "zod@npm:3.25.50"
-  checksum: 10c0/88f8e73198ebe986b1640610e8abf9b3fde1db5de1d1dcfe21138b4712e6d9e875521a15538c70b5eb4c52712f8d6261794e0716ad57b213c3b328e1bc423986
+"zod@npm:^3.25.51":
+  version: 3.25.51
+  resolution: "zod@npm:3.25.51"
+  checksum: 10c0/6fc708a45b0d44282c18da4c93f4d42336a884a42487031b40bacb7e8c5a2e539b7993d3ccba75f445df78050f05ff4e34110ffe03d2c3fcbe557c7fe7c1350a
   languageName: node
   linkType: hard
 

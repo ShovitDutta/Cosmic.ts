@@ -34,7 +34,6 @@
         "format": "prettier --write \"**/*.{ts,tsx,md}\"",
         "commit": "git add . && node scripts/commit.js",
         "prepare": "node scripts/prepare.js",
-        "update": "node scripts/update.js",
         "clean": "node scripts/clean.js",
         "setup": "node scripts/setup.js",
         "========================================: Turbo": "========================================",
@@ -49,7 +48,7 @@
         "colors": "^1.4.0",
         "glob": "^11.0.2",
         "globals": "^16.2.0",
-        "prettier": "^3.3.2",
+        "prettier": "^3.5.3",
         "turbo": "^2.5.4",
         "typescript": "^5.8.3"
     },
