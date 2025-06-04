@@ -11,7 +11,7 @@
         "name": "Shovit Dutta",
         "email": "shovitdutta1@gmail.com"
     },
-    "packageManager": "yarn@1.22.22",
+    "packageManager": "yarn@4.9.2",
     "types": "./dist/index.d.ts",
     "dependencies": {
         "@auth/drizzle-adapter": "^1.9.1",
