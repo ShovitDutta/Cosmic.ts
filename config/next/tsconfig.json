@@ -1,5 +1,0 @@
-{
-    "include": ["index.ts"],
-    "extends": "../typescript/base.json",
-    "compilerOptions": { "outDir": "dist", "declaration": true }
-}
