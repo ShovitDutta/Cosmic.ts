@@ -164,15 +164,9 @@ export default function ParallelClientPage() {
                                     </motion.span>
                                 </div>
                                 <div className="h-8 w-px bg-gradient-to-b from-transparent via-gray-500 to-transparent"></div>
-                                <motion.div
-                                    key={currentTime}
-                                    initial={{ opacity: 0, y: 20, scale: 0.8 }}
-                                    animate={{ opacity: 1, y: 0, scale: 1 }}
-                                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
-                                    className="flex-1 text-left"
-                                >
+                                <div className="flex-1 text-left">
                                     <p className="text-2xl font-mono font-black text-white tracking-wider drop-shadow-lg">{currentTime}</p>
-                                </motion.div>
+                                </div>
                             </motion.div>
                         </div>
                     </motion.div>

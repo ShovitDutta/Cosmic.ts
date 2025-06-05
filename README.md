@@ -36,9 +36,7 @@
 **A TypeScript-first monorepo framework for Next.js**, designed to manage multiple projects in clusters with ease! 🚀
 
 <p align="left">
-  <img src="images/view-1.png" alt="View 1" width="200" height="150" style="display:inline-block; margin-right: 10px;">
-  <img src="images/view-2.png" alt="View 2" width="200" height="150" style="display:inline-block; margin-right: 10px;">
-  <img src="images/view-3.png" alt="View 3" width="200" height="150" style="display:inline-block;">
+  <video src="images/video.m4" autoplay loop muted controls></video>
 </p>
 
 ---
