@@ -21,7 +21,8 @@
     },
     "dependencies": {
         "@cosmos/next": "*",
-        "@cosmos/tailwindcss": "*"
+        "@cosmos/tailwindcss": "*",
+        "lucide-react": "^0.513.0"
     },
     "devDependencies": {
         "@cosmos/eslint": "*",

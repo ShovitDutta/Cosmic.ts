@@ -1,13 +1,11 @@
 FROM node:24-alpine
-RUN apk add --no-cache nginx supervisor
-RUN corepack enable
-RUN yarn set version stable
+RUN apk add --no-cache nginx supervisor yarn
 WORKDIR /app
 ENV NODE_OPTIONS=--no-deprecation
 COPY . .
 EXPOSE 8000
 RUN chmod -R +x /app
-RUN yarn install --immutable-cache
+RUN yarn install --fronzen-lockfile
 COPY docker/nginx.conf /etc/nginx/nginx.conf
 COPY docker/supervisord.conf /etc/supervisord.conf
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

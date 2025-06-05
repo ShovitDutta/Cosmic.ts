@@ -17,7 +17,7 @@
         "source/__main__",
         "source/clusters/**"
     ],
-    "description": "A Typescript Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.",
+    "description": "A Typescript Based Multi-Repo Framework For Next.Js With A Structured Approach To Managing Multiple Projects In Clusters.",
     "repository": {
         "type": "git",
         "url": "git+https://github.com/ShovitDutta/Cosmos.ts.git"
