@@ -35,8 +35,9 @@
 
 **A TypeScript-first monorepo framework for Next.js**, designed to manage multiple projects in clusters with ease! 🚀
 
+
 <p align="left">
-  <video src="images/video.mp4" autoplay loop muted controls></video>
+  <video src="https://github.com/ShovitDutta/Cosmos.ts/blob/main/images/video.mp4" autoplay loop muted controls></video>
 </p>
 
 ---
