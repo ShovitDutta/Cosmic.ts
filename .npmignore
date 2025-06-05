@@ -18,7 +18,7 @@ yarn-error.log*
 .gitignore
 .gitmodules
 .gitattributes
-.gitkeep
+.gitkeep.mp4
 .DS_Store
 .idea/
 *.iml
@@ -73,7 +73,6 @@ tmp/
 *.tar.gz
 *.rar
 *.7z
-*.mp4
 *.mov
 *.svg.bak
 *.db

@@ -63,7 +63,6 @@ docker-compose.yml.bak
 *.tar.gz
 *.rar
 *.7z
-*.mp4
 *.mov
 *.svg.bak
 drizzle/meta/
