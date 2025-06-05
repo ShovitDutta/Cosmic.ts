@@ -1,0 +1,25 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "name": "@cosmos/typescript",
+    "packageManager": "yarn@1.22.22",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "publishConfig": {
+        "access": "public"
+    },
+    "devDependencies": {
+        "@types/better-sqlite3": "^7.6.13",
+        "@types/node": "^22.15.29",
+        "@types/pg": "^8.15.4",
+        "@types/react": "^19.1.6",
+        "@types/react-dom": "^19.1.5"
+    }
+}

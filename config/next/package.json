@@ -1,0 +1,35 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "name": "@cosmos/next",
+    "license": "UNLICENSED",
+    "packageManager": "yarn@1.22.22",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "types": "./dist/index.d.ts",
+    "dependencies": {
+        "@auth/drizzle-adapter": "^1.9.1",
+        "@tanstack/react-query": "^5.80.2",
+        "better-sqlite3": "^11.10.0",
+        "dotenv": "^16.5.0",
+        "drizzle-kit": "^0.31.1",
+        "drizzle-orm": "^0.44.1",
+        "framer-motion": "^12.16.0",
+        "next": "^15.3.3",
+        "next-auth": "^5.0.0-beta.28",
+        "pg": "^8.16.0",
+        "react": "^19.1.0",
+        "react-dom": "^19.1.0",
+        "react-icons": "^5.5.0",
+        "socket.io": "^4.8.1",
+        "socket.io-client": "^4.8.1",
+        "zod": "^3.25.51",
+        "zustand": "^5.0.5"
+    }
+}

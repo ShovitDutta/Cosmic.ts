@@ -1,0 +1,61 @@
+HOST_PORT: ENV_HOST_PORT # This will be resolved from .env or environemt
+BASE:
+  - NAME: main
+    PORT: 3000
+    COMMAND: /bin/sh -ec "bun run build && bun run start"
+    ENVIRONMENT_VARIABLES:
+      NEXT_PUBLIC_BASE_PORT: 3000
+      AUTH_SECRET: ENV_BASE_AUTH_SECRET # This will be resolved from .env or environemt
+      DATABASE_URL: ENV_BASE_DATABASE_URL # This will be resolved from .env or environemt
+      CONNECT_PEERS: ENV_BASE_CONNECT_PEERS # This will be resolved from .env or environemt
+      AUTH_GOOGLE_ID: ENV_BASE_AUTH_GOOGLE_ID # This will be resolved from .env or environemt
+      AUTH_GOOGLE_SECRET: ENV_BASE_AUTH_GOOGLE_SECRET # This will be resolved from .env or environemt
+CLUSTERS:
+  - NAME: cluster-1
+    PROJECTS:
+      - NAME: project-1
+        PORT: 3001
+        COMMAND: /bin/sh -ec "bun run build && bun run start"
+        ENVIRONMENT_VARIABLES:
+          NEXT_PUBLIC_BASE_PORT: 3001
+          NEXT_PUBLIC_BASE_PATH: "/cluster-1/project-1"
+          AUTH_SECRET: ENV_CLUSTER_1_PROJECT_1_AUTH_SECRET # This will be resolved from .env or environemt
+          DATABASE_URL: ENV_CLUSTER_1_PROJECT_1_DATABASE_URL # This will be resolved from .env or environemt
+          CONNECT_PEERS: ENV_CLUSTER_1_PROJECT_1_CONNECT_PEERS # This will be resolved from .env or environemt
+          AUTH_GOOGLE_ID: ENV_CLUSTER_1_PROJECT_1_AUTH_GOOGLE_ID # This will be resolved from .env or environemt
+          AUTH_GOOGLE_SECRET: ENV_CLUSTER_1_PROJECT_1_AUTH_GOOGLE_SECRET # This will be resolved from .env or environemt
+      - NAME: project-2
+        PORT: 3002
+        COMMAND: /bin/sh -ec "bun run build && bun run start"
+        ENVIRONMENT_VARIABLES:
+          NEXT_PUBLIC_BASE_PORT: 3002
+          NEXT_PUBLIC_BASE_PATH: "/cluster-1/project-2"
+          AUTH_SECRET: ENV_CLUSTER_1_PROJECT_2_AUTH_SECRET # This will be resolved from .env or environemt
+          DATABASE_URL: ENV_CLUSTER_1_PROJECT_2_DATABASE_URL # This will be resolved from .env or environemt
+          CONNECT_PEERS: ENV_CLUSTER_1_PROJECT_2_CONNECT_PEERS # This will be resolved from .env or environemt
+          AUTH_GOOGLE_ID: ENV_CLUSTER_1_PROJECT_2_AUTH_GOOGLE_ID # This will be resolved from .env or environemt
+          AUTH_GOOGLE_SECRET: ENV_CLUSTER_1_PROJECT_2_AUTH_GOOGLE_SECRET # This will be resolved from .env or environemt
+  - NAME: cluster-2
+    PROJECTS:
+      - NAME: project-1
+        PORT: 3003
+        COMMAND: /bin/sh -ec "bun run build && bun run start"
+        ENVIRONMENT_VARIABLES:
+          NEXT_PUBLIC_BASE_PORT: 3003
+          NEXT_PUBLIC_BASE_PATH: "/cluster-2/project-1"
+          AUTH_SECRET: ENV_CLUSTER_2_PROJECT_1_AUTH_SECRET # This will be resolved from .env or environemt
+          DATABASE_URL: ENV_CLUSTER_2_PROJECT_1_DATABASE_URL # This will be resolved from .env or environemt
+          CONNECT_PEERS: ENV_CLUSTER_2_PROJECT_1_CONNECT_PEERS # This will be resolved from .env or environemt
+          AUTH_GOOGLE_ID: ENV_CLUSTER_2_PROJECT_1_AUTH_GOOGLE_ID # This will be resolved from .env or environemt
+          AUTH_GOOGLE_SECRET: ENV_CLUSTER_2_PROJECT_1_AUTH_GOOGLE_SECRET # This will be resolved from .env or environemt
+      - NAME: project-2
+        PORT: 3004
+        COMMAND: /bin/sh -ec "bun run build && bun run start"
+        ENVIRONMENT_VARIABLES:
+          NEXT_PUBLIC_BASE_PORT: 3004
+          NEXT_PUBLIC_BASE_PATH: "/cluster-2/project-2"
+          AUTH_SECRET: ENV_CLUSTER_2_PROJECT_2_AUTH_SECRET # This will be resolved from .env or environemt
+          DATABASE_URL: ENV_CLUSTER_2_PROJECT_2_DATABASE_URL # This will be resolved from .env or environemt
+          CONNECT_PEERS: ENV_CLUSTER_2_PROJECT_2_CONNECT_PEERS # This will be resolved from .env or environemt
+          AUTH_GOOGLE_ID: ENV_CLUSTER_2_PROJECT_2_AUTH_GOOGLE_ID # This will be resolved from .env or environemt
+          AUTH_GOOGLE_SECRET: ENV_CLUSTER_2_PROJECT_2_AUTH_GOOGLE_SECRET # This will be resolved from .env or environemt

@@ -1,0 +1,38 @@
+{
+    "private": true,
+    "type": "module",
+    "version": "0.0.0",
+    "license": "UNLICENSED",
+    "name": "@cosmos/tailwindcss",
+    "packageManager": "yarn@1.22.22",
+    "engines": {
+        "node": ">=18"
+    },
+    "author": {
+        "name": "Shovit Dutta",
+        "email": "shovitdutta1@gmail.com"
+    },
+    "sideEffects": [
+        "**/*.css"
+    ],
+    "files": [
+        "dist"
+    ],
+    "exports": {
+        ".": "./globals.css",
+        "./postcss": "./postcss.config.js",
+        "./styles.css": "./dist/index.css"
+    },
+    "scripts": {
+        "lint": "eslint src --max-warnings 0",
+        "build": "tailwindcss -i ./globals.css -o ./dist/index.css",
+        "dev": "tailwindcss -i ./globals.css -o ./dist/index.css --watch"
+    },
+    "devDependencies": {
+        "@tailwindcss/cli": "^4.1.8",
+        "@tailwindcss/postcss": "^4.1.8",
+        "postcss": "^8.5.4",
+        "prettier-plugin-tailwindcss": "^0.6.12",
+        "tailwindcss": "^4.1.8"
+    }
+}
